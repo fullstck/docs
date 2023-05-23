@@ -6,22 +6,48 @@ description: "This endpoint gets or creates a new user."
 
 ### Body
 
-<ParamField body="name" type="string">
-  This is the name of the user group.
+<ParamField body="bedroomMax" type="integer">
+  The maximum number of bedrooms in the property.
 </ParamField>
 
-<ParamField body="user_group_id" type="string">
-  This is the ID you use to identify this user group in your database.
+<ParamField body="bedroomMin" type="integer">
+  The minimum number of bedrooms in the property.
 </ParamField>
 
-<ParamField body="mapping" type="object">
-  This is a JSON mapping of schema id to either the data source that this user group should be
-  associated with or id of the datasource you provided when creating it.
+<ParamField body="budgetMax" type="integer">
+  The maximum budget for the property.
 </ParamField>
 
-<ParamField body="properties" type="object">
-  This is a JSON object for properties assigned to this user group. These will be accessible through
-  variables in the dashboards and SQL editor
+<ParamField body="budgetMin" type="integer">
+  The minimum budget for the property.
+</ParamField>
+
+<ParamField body="condominiumFeesMax" type="integer">
+  The maximum condominium fees for the property.
+</ParamField>
+
+<ParamField body="condominiumFeesMin" type="integer">
+  The minimum condominium fees for the property.
+</ParamField>
+
+<ParamField body="constructionYearMax" type="integer">
+  The maximum construction year of the property.
+</ParamField>
+
+<ParamField body="constructionYearMin" type="integer">
+  The minimum construction year of the property.
+</ParamField>
+
+<ParamField body="energyCategories[]" type="array of strings">
+  The energy efficiency categories of the property.
+</ParamField>
+
+<ParamField body="energyValueMax" type="integer">
+  The maximum energy value of the property.
+</ParamField>
+
+<ParamField body="energyValueMin" type="integer">
+  The minimum energy value of the property.
 </ParamField>
 
 ### Response

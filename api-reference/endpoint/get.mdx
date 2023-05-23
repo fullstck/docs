@@ -70,63 +70,12 @@ The contents of the user group
 <RequestExample>
 
 ```bash Example Request
-curl -X GET 'https://api.notif.immo/propertyDocuments\
-?bedroomMax=5\
-&bedroomMin=2\
-&budgetMax=550000\
-&budgetMin=450000\
-&condominiumFeesMax=1000\
-&condominiumFeesMin=500\
-&constructionYearMax=1990\
-&constructionYearMin=1982\
-&energyCategories[]=A&energyCategories[]=B\
-&energyValueMax=117\
-&energyValueMin=117\
-&eventPriceVariationFromCreatedAt=2021-05-07T12:42:42\
-&eventPriceVariationMax=-2.1\
-&eventPriceVariationMin=-4.2\
-&eventPriceVariationToCreatedAt=2021-05-07T12:42:42\
-&eventSurfaceVariationFromCreatedAt=2021-05-07T12:42:42\
-&eventSurfaceVariationMax=-2.1\
-&eventSurfaceVariationMin=-4.2\
-&eventSurfaceVariationToCreatedAt=2021-05-07T12:42:42\
-&excludedCities[]=/cities/30953&excludedCities[]=/cities/30952\
-&excludedInseeCodes[]=75117&excludedInseeCodes[]=75118\
-&excludedProperties[]=/properties/9b750029-ed25-43a0-98bf-395cc148cc1b&excludedProperties[]=/properties/ddbad28b-aaf7-44b5-a0c7-4135554d3ba4\
-&excludedZipcodes[]=75017&excludedZipcodes[]=75018\
-&expired=false\
-&expression=expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=true&expressions[1][0][word]=viager&expressions[1][0][options][includes]=true&expressions[1][0][options][strict]=true\
-&feesPercentageMax=10\
-&feesPercentageMin=5\
-&feesResponsibility=0\
-&floorQuantityMax=8\
-&floorQuantityMin=5\
-&fromDate=2021-05-07T12:42:42\
-&fromUpdatedAt=2021-05-07T12:42:42\
-&furnished=true\
-&greenHouseGasCategories[]=A&greenHouseGasCategories[]=B\
-&greenHouseGasValueMax=32\
-&greenHouseGasValueMin=32\
-&includedCities[]=/cities/30953&includedCities[]=/cities/30952\
-&includedDepartments[]=includedDepartments[]=/departments/77\
-&includedInseeCodes[]=75117&includedInseeCodes[]=75118\
-&includedZipcodes[]=75017&includedZipcodes[]=75018\
-&inventoryPriceMax=500\
-&inventoryPriceMin=250\
-&itemsPerPage=10\
-&lat=48.864716\
-&lon=2.349014\
-&lotCountMax=12\
-&lotCountMin=4\
-&order[createdAt]=desc\
-&order[updateddAt]=desc\
-&page=1\
-&priceExcludingFeesMax=427500\
-&priceExcludingFeesMin=405000\
-&pricePerMeterMax=11500\
-&pricePerMeterMin=9500\
-&propertyTypes[]=0&propertyTypes[]=1\
-&publisherTypes[]=0&publisherTypes
+curl --location --request POST 'https://api.mintlify.com/api/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--data-raw '{
+    "current_token": ""
+}'
 ```
 
 </RequestExample>

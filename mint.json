@@ -44,22 +44,34 @@
       "pages": ["introduction", "features"]
     },
     {
-      "group": "API Documentation",
+      "group": "Authentication",
       "pages": ["api-reference/authentication"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Properties",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create_search",
+        "api-reference/endpoint/properties/get_collection",
+        "api-reference/endpoint/properties/get_single" 
+      ]
+    },
+    {
+      "group": "Indicators",
+      "pages": [
+        "api-reference/endpoint/indicators/price_per_meter"    
+      ]
+    },
+    {
+      "group": "Searches",
+      "pages": [
+        "api-reference/endpoint/searches/get_collection",
+        "api-reference/endpoint/searches/get_single",
+        "api-reference/endpoint/create",
         "api-reference/endpoint/update",
         "api-reference/endpoint/delete"
       ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "linkedin": "https://www.linkedin.com/company/melo-io"
   }
 }

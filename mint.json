@@ -18,9 +18,7 @@
       "name": "X-API-KEY"
     }
   },
-  "topAnchor": {
-    "name": "Melo API"
-  },
+
   "anchors": [
     {
       "name": "API Reference",
@@ -36,12 +34,12 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["introduction", "faq"]
+      "pages": ["introduction", "glossary"]
     },
     {
-      "group": "Authentication",
-      "pages": ["api-reference/authentication"]
-    },
+      "group": "Getting started",
+      "pages": ["api-reference/authentication", "api-reference/environments", "api-reference/faq"]
+    },    
     {
       "group": "Properties",
       "pages": [

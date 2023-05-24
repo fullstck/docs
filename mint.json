@@ -51,7 +51,7 @@
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
+        "api-reference/endpoint/create_search",
         "api-reference/endpoint/update",
         "api-reference/endpoint/delete"
       ]

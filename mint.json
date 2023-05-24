@@ -1,15 +1,15 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "Melo API Documentation",
   "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
+    "dark": "/logo/melo.png",
+    "light": "/logo/melo.png"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#3d5afe",
+    "light": "#3d5afe",
+    "dark": "#3d5afe"
   },
   "topbarLinks": [
     {
@@ -31,18 +31,9 @@
       "name": "Changelog",
       "icon": "list",
       "url": "https://mintlify.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
-    }
+    }    
   ],
-  "navigation": [
-    {
-      "group": "Home",
-      "pages": ["introduction", "features"]
-    },
+  "navigation": [    
     {
       "group": "Authentication",
       "pages": ["api-reference/authentication"]

@@ -7,9 +7,9 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#3d5afe",
-    "light": "#3d5afe",
-    "dark": "#3d5afe"
+    "primary": "#697ffc",
+    "light": "#697ffc",
+    "dark": "#697ffc"
   },
   "topbarLinks": [
     {
@@ -33,7 +33,11 @@
       "url": "https://mintlify.com"
     }    
   ],
-  "navigation": [    
+  "navigation": [
+    {
+      "group": "Home",
+      "pages": ["introduction", "features"]
+    },
     {
       "group": "Authentication",
       "pages": ["api-reference/authentication"]

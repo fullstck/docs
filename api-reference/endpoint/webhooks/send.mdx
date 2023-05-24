@@ -8,6 +8,16 @@ description: "This endpoint will simulate a match or an event to the given endpo
 In order to use webhooks, you need to provide an `endpointRecipient` or/and an `eventEndpoint` on the [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) endpoint and choose the events you want to subscribe to using the `subscribedEvents` parameter.
 </Tip>
 
+| Event              | Description                                                  |
+|--------------------|--------------------------------------------------------------|
+| `ad.update.price`  | Notifies you when the price of an advert changes.       |
+| `ad.update.surface`| Notifies you when the surface area of an advert changes.|
+| `ad.update.pictures`| Notifies you when the pictures of an advert are updated.|
+| `ad.update.expired`| Notifies you when an advert has expired.                    |
+| `property.ad.create` | Notifies you when a new advert is created. |
+| `property.ad.update` | Notifies you when an existing advert is updated. |
+
+
 ### Path
 
 <ParamField path="endpoint" type="url" required placeholder="https://hook.eu1.make.com/...">

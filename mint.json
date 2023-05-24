@@ -65,9 +65,9 @@
       "pages": [
         "api-reference/endpoint/searches/get_collection",
         "api-reference/endpoint/searches/get_single",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/searches/create",
+        "api-reference/endpoint/searches/update",
+        "api-reference/endpoint/searches/delete"
       ]
     }
   ],

@@ -308,9 +308,7 @@ Date histogram granularity for time series. Can be `month` or `year`.
 ```bash Example Request
 curl --location -g --request GET 'https://api.notif.immo/documents/properties?includedDepartments[]=departments/77&fromDate=2020-01-10&propertyTypes[]=1&transactionType=0&withCoherentPrice=true&budgetMin=1800000&budgetMax=1900000' \
 --header 'Content-Type: application/json' \
---header 'platformOrigin: melo' \
---header 'X-API-KEY: <api_key>' \
---data-raw ''
+--header 'X-API-KEY: <api_key>'
 ```
 
 </RequestExample>

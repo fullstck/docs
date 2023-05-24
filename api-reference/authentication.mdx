@@ -1,22 +1,17 @@
 ---
 title: "Getting started"
-description: "Example overview page before API endpoints"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros iaculis tortor dapibus cursus. Curabitur quis sapien nec tortor dictum gravida.
+Welcome to the beginning of your journey with our API. This page will guide you through the initial steps of understanding and utilizing our API to its fullest potential.
 
-```bash
-'Authorization': 'Token <team_token>'
+If you want to get an access and try out the API, please [sign up](https://www.melo.io) and create an API key in your settings. It is important to keep your API Key private and secure.
+
+## Basic Example
+
+All API calls require the `X-API-KEY` header. For an example of how to do this, see the code snippet below:
+
+```bash Example Request
+curl --location -g --request GET 'https://api.notif.immo/documents/properties/{id}' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <api_key>' \
 ```
-
-## API Tokens
-
-Nullam convallis mauris at nunc consectetur, ac imperdiet leo rutrum. Maecenas cursus purus a pellentesque blandit. Pellentesque vitae lacinia libero, non mollis metus.
-
-Nam id ullamcorper urna, at rutrum enim. [Maecenas vulputate](/introduction) vehicula libero, vitae sodales augue pretium nec. Quisque a magna tempor, semper risus vel, fermentum nunc. Pellentesque fermentum interdum ex, eu convallis massa blandit sed. Aliquam bibendum ipsum vel laoreet auctor.
-
-### Permissions
-
-Etiam lobortis ut odio ut fermentum. Nunc odio velit, sollicitudin at consectetur id, tristique eget turpis. Aliquam at risus vitae dolor sodales venenatis. In hac habitasse platea dictumst.
-
-Aenean consequat diam eget mollis fermentum. [Quisque eu malesuada](/introduction) felis, non dignissim libero.

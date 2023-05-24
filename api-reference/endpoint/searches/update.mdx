@@ -1,7 +1,7 @@
 ---
 title: "Update Search"
 api: "PUT /searches/{id}"
-description: "This endpoint updates an existing search"
+description: "Updates an existing search"
 ---
 
 ### Body
@@ -305,7 +305,7 @@ curl --location --request POST 'https://api.notif.immo/searches/{id}' \
 --header 'Content-Type: application/json' \
 --header 'X-API-KEY: <api_key>' \
 --data-raw '{
-      "bedroomMin": 0,
+  "bedroomMin": 0,
   "budgetMax": 0,
   "budgetMin": 0,
   "endpointRecipient": "https://www.mycompany.com/webhook_melo_match",

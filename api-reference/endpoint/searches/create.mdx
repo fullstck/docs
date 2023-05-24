@@ -1,303 +1,138 @@
 ---
 title: "Create Search"
 api: "POST /searches"
-description: "This endpoint creates a new search"
+description: "Creates a new search"
 ---
 
 ### Body
 
-<ParamField body="bedroomMax" type="integer">
-  The maximum number of bedrooms in the property.
-</ParamField>
-
 <ParamField body="bedroomMin" type="integer">
-  The minimum number of bedrooms in the property.
+  The minimum number of bedrooms.
 </ParamField>
 
-<ParamField body="budgetMax" type="integer">
-  The maximum budget for the property.
+<ParamField body="budgetMax" type="integer"  >
+  Maximum budget.
 </ParamField>
 
-<ParamField body="budgetMin" type="integer">
-  The minimum budget for the property.
+<ParamField body="budgetMin" type="integer"  >
+  Minimum budget.
 </ParamField>
 
-<ParamField body="condominiumFeesMax" type="integer">
-  The maximum condominium fees for the property.
+<ParamField body="endpointRecipient" type="string" >
+  Endpoint webhook to receive new matches in realtime. Https url is required. You can test your endpoint here: http://schema.org/url
 </ParamField>
 
-<ParamField body="condominiumFeesMin" type="integer">
-  The minimum condominium fees for the property.
+<ParamField body="eventEndpoint" type="string" >
+  Endpoint webhook to receive adverts updates in realtime. Https url is required. You can test your endpoint here: http://schema.org/url
 </ParamField>
 
-<ParamField body="constructionYearMax" type="integer">
-  The maximum construction year of the property.
-</ParamField>
-
-<ParamField body="constructionYearMin" type="integer">
-  The minimum construction year of the property.
-</ParamField>
-
-<ParamField body="energyCategories[]" type="array">
-  The energy efficiency categories of the property.
-</ParamField>
-
-<ParamField body="energyValueMax" type="integer">
-  The maximum energy value of the property.
-</ParamField>
-
-<ParamField body="energyValueMin" type="integer">
-  The minimum energy value of the property.
-</ParamField>
-
-<ParamField body="eventPriceVariationFromCreatedAt" type="date">
-  The date from which an event of type price is created (inclusive).
-</ParamField>
-
-<ParamField body="eventPriceVariationMax" type="float">
-  The maximum variation of an event of type price. Expressed in percent.
-</ParamField>
-
-<ParamField body="eventPriceVariationMin" type="float">
-  The minimum variation of an event of type price. Expressed in percent.
-</ParamField>
-
-<ParamField body="eventPriceVariationToCreatedAt" type="date">
-  The date before which an event of type price is created (inclusive).
-</ParamField>
-
-<ParamField body="eventSurfaceVariationFromCreatedAt" type="date">
-  The date from which an event of type surface is created (inclusive).
-</ParamField>
-
-<ParamField body="eventSurfaceVariationMax" type="float">
-  The maximum variation of an event of type surface. Expressed in percent.
-</ParamField>
-
-<ParamField body="eventSurfaceVariationMin" type="float">
-  The minimum variation of an event of type surface. Expressed in percent.
-</ParamField>
-
-<ParamField body="eventSurfaceVariationToCreatedAt" type="date">
-  The date before which an event of type surface is created (inclusive).
-</ParamField>
-
-<ParamField body="excludedCities[]" type="array">
+<ParamField body="excludedCities" type="array">
   Cities to be excluded.
 </ParamField>
 
-<ParamField body="excludedInseeCodes[]" type="array">
-  Insee codes to be excluded.
+<ParamField body="excludedSiteCategories" type="array">
+  Site categories to be excluded.
 </ParamField>
 
-<ParamField body="excludedProperties[]" type="array">
-  Properties to be excluded.
+<ParamField body="expressions" type="array">
+  Enable notifications for the given Search.
 </ParamField>
 
-<ParamField body="excludedZipcodes[]" type="array">
-  Zipcodes to be excluded.
+<ParamField body="furnished" type="boolean" >
+  Furnished property.
 </ParamField>
 
-<ParamField body="expired" type="boolean">
-  Filter for expired properties.
+<ParamField body="hidePropertyContact" type="boolean">
+  Hide property contact information.
 </ParamField>
 
-<ParamField body="expression" type="array">
-  Full text matching including/excluding words & phrases in the title or the description of the property.
+<ParamField body="includedCities" type="array">
+  Included cities.
 </ParamField>
 
-<ParamField body="feesPercentageMax" type="float">
-  The maximum percentage of fees.
+<ParamField body="includedDepartments" type="array">
+  Included departments.
 </ParamField>
 
-<ParamField body="feesPercentageMin" type="float">
-  The minimum percentage of fees.
+<ParamField body="includedSiteCategories" type="array">
+  Included site categories.
 </ParamField>
 
-<ParamField body="feesResponsibility" type="integer">
-  Responsibility for fees (0 for seller, 1 for purchaser).
+<ParamField body="landSurfaceMax" type="integer"  >
+  Maximum land surface.
 </ParamField>
 
-<ParamField body="floorQuantityMax" type="integer">
-  The maximum number of floors in the property.
-</ParamField>
-
-<ParamField body="floorQuantityMin" type="integer">
-  The minimum number of floors in the property.
-</ParamField>
-
-<ParamField body="fromDate" type="date">
-  The date from which the property is created (inclusive).
-</ParamField>
-
-<ParamField body="fromUpdatedAt" type="date">
-  The date from which the property is updated (inclusive).
-</ParamField>
-
-<ParamField body="furnished" type="boolean">
-  Filter for furnished properties.
-</ParamField>
-
-<ParamField body="greenHouseGasCategories[]" type="array">
-  Green house gas performance letter array of the property.
-</ParamField>
-
-<ParamField body="greenHouseGasValueMax" type="integer">
-  The maximum value of green house gas of the property.
-</ParamField>
-
-<ParamField body="greenHouseGasValueMin" type="integer">
-  The minimum value of green house gas of the property.
-</ParamField>
-
-<ParamField body="includedCities[]" type="array" default="[]" >
-  Located in given cities. Example: includedCities[]=/cities/30953&includedCities[]=/cities/30952
-</ParamField>
-
-<ParamField body="includedDepartments[]" type="array" default="[]" >
-  Located in given departments. Example: includedDepartments[]=includedDepartments[]=/departments/77
-</ParamField>
-
-<ParamField body="includedInseeCodes[]" type="array">
-  Located in given insee codes. Example: includedInseeCodes[]=75117&includedInseeCodes[]=75118
-</ParamField>
-
-<ParamField body="includedZipcodes[]" type="array">
-  Located in given zipcodes. Example: includedZipcodes[]=75017&includedZipcodes[]=75018
-</ParamField>
-
-<ParamField body="inventoryPriceMax" type="float" >
-  Lower than or equal to inventoryPriceMax. Example: inventoryPriceMax=500
-</ParamField>
-
-<ParamField body="inventoryPriceMin" type="float" >
-  Greater than or equal to inventoryPriceMin. Example: inventoryPriceMin=250
-</ParamField>
-
-<ParamField body="itemsPerPage" type="integer" default="30">
-  The number of items per page. Max is 30.
+<ParamField body="landSurfaceMin" type="integer"  >
+  Minimum land surface.
 </ParamField>
 
 <ParamField body="lat" type="float" >
-  Latitude. Used if radius & lat/lon are set. Example: lat=48.864716
+  Latitude. Used if radius & lat/lon are set.
 </ParamField>
 
-<ParamField body="lon" type="float">
-  Longitude. Used if radius & lat/lon are given. Example: lon=2.349014
+<ParamField body="lon" type="float" >
+  Longitude. Used if radius & lat/lon are set.
 </ParamField>
 
-<ParamField body="lotCountMax" type="integer" >
-  Lower than or equal to lotCountMax. Example: lotCountMax=12
+<ParamField body="notificationEnabled" type="boolean" default="false">
+  Enable notifications for the given Search.
 </ParamField>
 
-<ParamField body="lotCountMin" type="integer" >
-  Greater than or equal to lotCountMin. Example: lotCountMin=4
+<ParamField body="notificationRecipient" type="string" >
+  Email recipient for matches notifications.
 </ParamField>
 
-<ParamField body="order[createdAt]" type="integer"  default="desc">
-  Order properties by creation date.
+<ParamField body="pricePerMeterMax" type="integer"  >
+  Maximum price per meter.
 </ParamField>
 
-<ParamField body="order[updatedAt]" type="integer">
-  Order properties by update date.
+<ParamField body="pricePerMeterMin" type="integer"  >
+  Minimum price per meter.
 </ParamField>
 
-<ParamField body="page" type="integer" default="1">
-  The collection page number.
+<ParamField body="propertyTypes" type="integer"  required >
+  Property types. 0: FLAT, 1: HOUSE, 2: BUILDING, 3: PARKING, 4: OFFICE, 5: LAND, 6: SHOP
 </ParamField>
 
-<ParamField body="priceExcludingFeesMax" type="float" >
-  Lower than or equal to priceExcludingFeesMax. Example: priceExcludingFeesMax=427500
-</ParamField>
-
-<ParamField body="priceExcludingFeesMin" type="float" >
-  Greater than or equal to priceExcludingFeesMin. Example: priceExcludingFeesMin=405000
-</ParamField>
-
-<ParamField body="pricePerMeterMax" type="integer" >
-  Lower than or equal to pricePerMeterMax. Example: pricePerMeterMax=11500
-</ParamField>
-
-<ParamField body="pricePerMeterMin" type="integer" >
-  Greater than or equal to pricePerMeterMin. Example: pricePerMeterMin=9500
-</ParamField>
-
-<ParamField body="propertyTypes[]" type="array">
-  0: FLAT, 1: HOUSE, 2: BUILDING, 3: PARKING, 4: OFFICE, 5: LAND, 6: SHOP
-</ParamField>
-
-<ParamField body="publisherTypes[]" type="array">
-  0 : INDIVIDUAL, 1 : PROFESSIONAL
+<ParamField body="publisherTypes" type="integer"  >
+  Publisher types. 0: INDIVIDUAL, 1: PROFESSIONAL
 </ParamField>
 
 <ParamField body="radius" type="integer" >
-  Distance expressed in kilometers. Used if lat & lon are set. Example: radius=20
+  Distance expressed in kilometers. Used if lat & lon are set.
 </ParamField>
 
-<ParamField body="rentalChargesMax" type="float" >
-  Lower than or equal to rentalChargesMax. Example: rentalChargesMax=100
+<ParamField body="roomMin" type="integer">
+  Minimum number of rooms.
 </ParamField>
 
-<ParamField body="rentalChargesMin" type="float" >
-  Greater than or equal to rentalChargesMin. Example: rentalChargesMin=50
+<ParamField body="subscribedEvents" type="array" >
+  Events you want to be alerted for. Items include: "ad.update.price", "ad.update.surface", "ad.update.pictures", "ad.update.expired", "property.ad.create", "property.ad.update".
 </ParamField>
 
-<ParamField body="rentalPledgeMax" type="float" >
-  Lower than or equal to rentalPledgeMax. Example: rentalPledgeMax=800
+<ParamField body="surfaceMax" type="integer"  >
+  Maximum property surface area.
 </ParamField>
 
-<ParamField body="rentalPledgeMin" type="float" >
-  Greater than or equal to rentalPledgeMin. Example: rentalPledgeMin=500
+<ParamField body="surfaceMin" type="integer"  >
+  Minimum property surface area.
 </ParamField>
 
-<ParamField body="renterFeesMax" type="float" >
-  Lower than or equal to renterFeesMax. Example: renterFeesMax=80
+<ParamField body="title" type="string"  required>
+  Title of the property.
 </ParamField>
 
-<ParamField body="renterFeesMin" type="float" >
-  Greater than or equal to renterFeesMin. Example: renterFeesMin=50
+<ParamField body="transactionType" type="integer" required >
+  Type of transaction. 0: SELL, 1: RENT.
 </ParamField>
 
-<ParamField body="roomMax" type="integer" >
-  Having maximum x rooms. Example: roomMax=6
-</ParamField>
-
-<ParamField body="roomMin" type="integer" >
-  Having minimum x rooms. Example: roomMin=3
-</ParamField>
-
-<ParamField body="sortMode" type="string"  default="property">
-  Property: fromDate/toDate criteria will be applied to property root object. Items will be sorted by property createdAt dates. Advert: fromDate/toDate criteria will be applied to adverts nested objects. Items will be sorted by advert createdAt dates. Example: sortMode=property
-</ParamField>
-
-<ParamField body="surfaceMax" type="integer" >
-  Lower than or equal to surfaceMax. Example: surfaceMax=84
-</ParamField>
-
-<ParamField body="surfaceMin" type="integer" >
-  Greater than or equal to surfaceMin. Example: surfaceMin=42
-</ParamField>
-
-<ParamField body="toDate" type="date" >
-  To datetime (inclusive). Example: toDate=2021-05-07 12:42:42
-</ParamField>
-
-<ParamField body="toUpdatedAt" type="date" >
-  Since datetime (inclusive). Example: toUpdatedAt=2021-05-07 12:42:42
-</ParamField>
-
-<ParamField body="transactionType" type="integer" >
-  0 : SELL, 1 : RENT
-</ParamField>
-
-<ParamField body="withCoherentPrice" type="boolean"  default="true">
-  Filter properties with coherent price. Example: withCoherentPrice=true
+<ParamField body="withCoherentPrice" type="boolean" default="true">
+  Having properties with coherent prices.
 </ParamField>
 
 <ParamField body="withVirtualTour" type="boolean" >
-  Having a virtual tour video link. Example: withVirtualTour=true
+  Property includes a virtual tour.
 </ParamField>
-
 <RequestExample>
 
 ```bash Example Request

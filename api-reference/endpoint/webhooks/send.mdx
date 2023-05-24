@@ -1,0 +1,27 @@
+---
+title: "Simulate"
+api: "GET /webhook-tester"
+description: "This endpoint will simulate a match or an event to the given endpoint."
+---
+
+> ⚠️ In order to use webhooks, you need to provide an `endpointRecipient` or/and an `eventEndpoint` on the [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) endpoint and choose the events you want to subscribe to using the `subscribedEvents` parameter.
+
+### Path
+
+<ParamField path="endpoint" type="url" required placeholder="https://hook.eu1.make.com/...">
+  Endpoint where the match or the event will be sent to.
+</ParamField>
+
+<ParamField path="eventType" type="string" required placeholder="ad.update.price">
+  The type of event you want to trigger.
+</ParamField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api.notif.immo/webhook-tester' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <api_key>' \
+```
+
+</RequestExample>

@@ -12,11 +12,14 @@
     "dark": "#697ffc"
   }, 
   "api": {
-    "baseUrl": "https://api.notif.immo",
+    "baseUrl": ["https://api.notif.immo", "https://preprod-api.notif.immo"],
     "auth": {
       "method": "key",
       "name": "X-API-KEY"
     }
+  },
+  "topAnchor": {
+    "name": "Melo API"
   },
   "anchors": [
     {
@@ -32,7 +35,7 @@
   ],
   "navigation": [
     {
-      "group": "Home",
+      "group": "Welcome",
       "pages": ["introduction", "faq"]
     },
     {
@@ -61,9 +64,16 @@
         "api-reference/endpoint/searches/update",
         "api-reference/endpoint/searches/delete"
       ]
+    },
+    {
+      "group": "Webhooks",
+      "pages": [
+        "api-reference/endpoint/webhooks/send"       
+      ]
     }
   ],
   "footerSocials": {
+    "website": "https://www.melo.io/",
     "linkedin": "https://www.linkedin.com/company/melo-io"
   }
 }

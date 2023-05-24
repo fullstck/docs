@@ -1,67 +1,354 @@
 ---
 title: "Create Search"
-api: "POST https://api.mintlify.com/api/user"
+api: "POST /searches"
 description: "This endpoint creates a new search"
 ---
 
 ### Body
 
-<ParamField body="current_token" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
+<ParamField body="bedroomMax" type="integer">
+  The maximum number of bedrooms in the property.
 </ParamField>
 
-### Response
+<ParamField body="bedroomMin" type="integer">
+  The minimum number of bedrooms in the property.
+</ParamField>
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ParamField body="budgetMax" type="integer">
+  The maximum budget for the property.
+</ParamField>
 
-<ResponseField name="user_group" type="object">
+<ParamField body="budgetMin" type="integer">
+  The minimum budget for the property.
+</ParamField>
 
-The contents of the user group
+<ParamField body="condominiumFeesMax" type="integer">
+  The maximum condominium fees for the property.
+</ParamField>
 
-<Expandable title="Toggle object">
+<ParamField body="condominiumFeesMin" type="integer">
+  The minimum condominium fees for the property.
+</ParamField>
 
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
+<ParamField body="constructionYearMax" type="integer">
+  The maximum construction year of the property.
+</ParamField>
 
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
-</ResponseField>
+<ParamField body="constructionYearMin" type="integer">
+  The minimum construction year of the property.
+</ParamField>
 
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
+<ParamField body="energyCategories[]" type="array">
+  The energy efficiency categories of the property.
+</ParamField>
 
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
+<ParamField body="energyValueMax" type="integer">
+  The maximum energy value of the property.
+</ParamField>
 
-<ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'. User group id's must be unique to each environment, so you can
-  not create multiple user groups with with same id. If you have a production
-  customer and a test user group with the same id, you will be required to label
-  one as 'Customer' and another as 'Testing'
-</ResponseField>
+<ParamField body="energyValueMin" type="integer">
+  The minimum energy value of the property.
+</ParamField>
 
-</Expandable>
+<ParamField body="eventPriceVariationFromCreatedAt" type="date">
+  The date from which an event of type price is created (inclusive).
+</ParamField>
 
-</ResponseField>
+<ParamField body="eventPriceVariationMax" type="float">
+  The maximum variation of an event of type price. Expressed in percent.
+</ParamField>
+
+<ParamField body="eventPriceVariationMin" type="float">
+  The minimum variation of an event of type price. Expressed in percent.
+</ParamField>
+
+<ParamField body="eventPriceVariationToCreatedAt" type="date">
+  The date before which an event of type price is created (inclusive).
+</ParamField>
+
+<ParamField body="eventSurfaceVariationFromCreatedAt" type="date">
+  The date from which an event of type surface is created (inclusive).
+</ParamField>
+
+<ParamField body="eventSurfaceVariationMax" type="float">
+  The maximum variation of an event of type surface. Expressed in percent.
+</ParamField>
+
+<ParamField body="eventSurfaceVariationMin" type="float">
+  The minimum variation of an event of type surface. Expressed in percent.
+</ParamField>
+
+<ParamField body="eventSurfaceVariationToCreatedAt" type="date">
+  The date before which an event of type surface is created (inclusive).
+</ParamField>
+
+<ParamField body="excludedCities[]" type="array">
+  Cities to be excluded.
+</ParamField>
+
+<ParamField body="excludedInseeCodes[]" type="array">
+  Insee codes to be excluded.
+</ParamField>
+
+<ParamField body="excludedProperties[]" type="array">
+  Properties to be excluded.
+</ParamField>
+
+<ParamField body="excludedZipcodes[]" type="array">
+  Zipcodes to be excluded.
+</ParamField>
+
+<ParamField body="expired" type="boolean">
+  Filter for expired properties.
+</ParamField>
+
+<ParamField body="expression" type="array">
+  Full text matching including/excluding words & phrases in the title or the description of the property.
+</ParamField>
+
+<ParamField body="feesPercentageMax" type="float">
+  The maximum percentage of fees.
+</ParamField>
+
+<ParamField body="feesPercentageMin" type="float">
+  The minimum percentage of fees.
+</ParamField>
+
+<ParamField body="feesResponsibility" type="integer">
+  Responsibility for fees (0 for seller, 1 for purchaser).
+</ParamField>
+
+<ParamField body="floorQuantityMax" type="integer">
+  The maximum number of floors in the property.
+</ParamField>
+
+<ParamField body="floorQuantityMin" type="integer">
+  The minimum number of floors in the property.
+</ParamField>
+
+<ParamField body="fromDate" type="date">
+  The date from which the property is created (inclusive).
+</ParamField>
+
+<ParamField body="fromUpdatedAt" type="date">
+  The date from which the property is updated (inclusive).
+</ParamField>
+
+<ParamField body="furnished" type="boolean">
+  Filter for furnished properties.
+</ParamField>
+
+<ParamField body="greenHouseGasCategories[]" type="array">
+  Green house gas performance letter array of the property.
+</ParamField>
+
+<ParamField body="greenHouseGasValueMax" type="integer">
+  The maximum value of green house gas of the property.
+</ParamField>
+
+<ParamField body="greenHouseGasValueMin" type="integer">
+  The minimum value of green house gas of the property.
+</ParamField>
+
+<ParamField body="includedCities[]" type="array" default="[]" >
+  Located in given cities. Example: includedCities[]=/cities/30953&includedCities[]=/cities/30952
+</ParamField>
+
+<ParamField body="includedDepartments[]" type="array" default="[]" >
+  Located in given departments. Example: includedDepartments[]=includedDepartments[]=/departments/77
+</ParamField>
+
+<ParamField body="includedInseeCodes[]" type="array">
+  Located in given insee codes. Example: includedInseeCodes[]=75117&includedInseeCodes[]=75118
+</ParamField>
+
+<ParamField body="includedZipcodes[]" type="array">
+  Located in given zipcodes. Example: includedZipcodes[]=75017&includedZipcodes[]=75018
+</ParamField>
+
+<ParamField body="inventoryPriceMax" type="float" >
+  Lower than or equal to inventoryPriceMax. Example: inventoryPriceMax=500
+</ParamField>
+
+<ParamField body="inventoryPriceMin" type="float" >
+  Greater than or equal to inventoryPriceMin. Example: inventoryPriceMin=250
+</ParamField>
+
+<ParamField body="itemsPerPage" type="integer" default="30">
+  The number of items per page. Max is 30.
+</ParamField>
+
+<ParamField body="lat" type="float" >
+  Latitude. Used if radius & lat/lon are set. Example: lat=48.864716
+</ParamField>
+
+<ParamField body="lon" type="float">
+  Longitude. Used if radius & lat/lon are given. Example: lon=2.349014
+</ParamField>
+
+<ParamField body="lotCountMax" type="integer" >
+  Lower than or equal to lotCountMax. Example: lotCountMax=12
+</ParamField>
+
+<ParamField body="lotCountMin" type="integer" >
+  Greater than or equal to lotCountMin. Example: lotCountMin=4
+</ParamField>
+
+<ParamField body="order[createdAt]" type="integer"  default="desc">
+  Order properties by creation date.
+</ParamField>
+
+<ParamField body="order[updatedAt]" type="integer">
+  Order properties by update date.
+</ParamField>
+
+<ParamField body="page" type="integer" default="1">
+  The collection page number.
+</ParamField>
+
+<ParamField body="priceExcludingFeesMax" type="float" >
+  Lower than or equal to priceExcludingFeesMax. Example: priceExcludingFeesMax=427500
+</ParamField>
+
+<ParamField body="priceExcludingFeesMin" type="float" >
+  Greater than or equal to priceExcludingFeesMin. Example: priceExcludingFeesMin=405000
+</ParamField>
+
+<ParamField body="pricePerMeterMax" type="integer" >
+  Lower than or equal to pricePerMeterMax. Example: pricePerMeterMax=11500
+</ParamField>
+
+<ParamField body="pricePerMeterMin" type="integer" >
+  Greater than or equal to pricePerMeterMin. Example: pricePerMeterMin=9500
+</ParamField>
+
+<ParamField body="propertyTypes[]" type="array">
+  0: FLAT, 1: HOUSE, 2: BUILDING, 3: PARKING, 4: OFFICE, 5: LAND, 6: SHOP
+</ParamField>
+
+<ParamField body="publisherTypes[]" type="array">
+  0 : INDIVIDUAL, 1 : PROFESSIONAL
+</ParamField>
+
+<ParamField body="radius" type="integer" >
+  Distance expressed in kilometers. Used if lat & lon are set. Example: radius=20
+</ParamField>
+
+<ParamField body="rentalChargesMax" type="float" >
+  Lower than or equal to rentalChargesMax. Example: rentalChargesMax=100
+</ParamField>
+
+<ParamField body="rentalChargesMin" type="float" >
+  Greater than or equal to rentalChargesMin. Example: rentalChargesMin=50
+</ParamField>
+
+<ParamField body="rentalPledgeMax" type="float" >
+  Lower than or equal to rentalPledgeMax. Example: rentalPledgeMax=800
+</ParamField>
+
+<ParamField body="rentalPledgeMin" type="float" >
+  Greater than or equal to rentalPledgeMin. Example: rentalPledgeMin=500
+</ParamField>
+
+<ParamField body="renterFeesMax" type="float" >
+  Lower than or equal to renterFeesMax. Example: renterFeesMax=80
+</ParamField>
+
+<ParamField body="renterFeesMin" type="float" >
+  Greater than or equal to renterFeesMin. Example: renterFeesMin=50
+</ParamField>
+
+<ParamField body="roomMax" type="integer" >
+  Having maximum x rooms. Example: roomMax=6
+</ParamField>
+
+<ParamField body="roomMin" type="integer" >
+  Having minimum x rooms. Example: roomMin=3
+</ParamField>
+
+<ParamField body="sortMode" type="string"  default="property">
+  Property: fromDate/toDate criteria will be applied to property root object. Items will be sorted by property createdAt dates. Advert: fromDate/toDate criteria will be applied to adverts nested objects. Items will be sorted by advert createdAt dates. Example: sortMode=property
+</ParamField>
+
+<ParamField body="surfaceMax" type="integer" >
+  Lower than or equal to surfaceMax. Example: surfaceMax=84
+</ParamField>
+
+<ParamField body="surfaceMin" type="integer" >
+  Greater than or equal to surfaceMin. Example: surfaceMin=42
+</ParamField>
+
+<ParamField body="toDate" type="date" >
+  To datetime (inclusive). Example: toDate=2021-05-07 12:42:42
+</ParamField>
+
+<ParamField body="toUpdatedAt" type="date" >
+  Since datetime (inclusive). Example: toUpdatedAt=2021-05-07 12:42:42
+</ParamField>
+
+<ParamField body="transactionType" type="integer" >
+  0 : SELL, 1 : RENT
+</ParamField>
+
+<ParamField body="withCoherentPrice" type="boolean"  default="true">
+  Filter properties with coherent price. Example: withCoherentPrice=true
+</ParamField>
+
+<ParamField body="withVirtualTour" type="boolean" >
+  Having a virtual tour video link. Example: withVirtualTour=true
+</ParamField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/api/user' \
+curl --location --request POST 'https://api.notif.immo/searches' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
+--header 'X-API-KEY: <api_key>' \
 --data-raw '{
-    "current_token": ""
+      "bedroomMin": 0,
+  "budgetMax": 0,
+  "budgetMin": 0,
+  "endpointRecipient": "https://www.mycompany.com/webhook_melo_match",
+  "eventEndpoint": "https://www.mycompany.com/webhook_melo_updates",
+  "excludedCities": [
+    "string"
+  ],
+  "excludedSiteCategories": [
+    "string"
+  ],
+  "expressions": "expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=true&expressions[1][0][word]=viager&expressions[1][0][options][includes]=true&expressions[1][0][options][strict]=true",
+  "furnished": true,
+  "hidePropertyContact": true,
+  "includedCities": [
+    "string"
+  ],
+  "includedDepartments": [
+    "string"
+  ],
+  "includedSiteCategories": [
+    "string"
+  ],
+  "landSurfaceMax": 0,
+  "landSurfaceMin": 0,
+  "lat": "48.864716",
+  "lon": "2.349014",
+  "notificationEnabled": false,
+  "notificationRecipient": "foo@bar.com",
+  "pricePerMeterMax": 0,
+  "pricePerMeterMin": 0,
+  "propertyTypes": 3,
+  "publisherTypes": 3,
+  "radius": "20",
+  "roomMin": 0,
+  "subscribedEvents": [
+    "ad.update.price"
+  ],
+  "surfaceMax": 0,
+  "surfaceMin": 0,
+  "title": "string",
+  "transactionType": "0",
+  "withCoherentPrice": true,
+  "withVirtualTour": true
 }'
 ```
 
@@ -71,213 +358,94 @@ curl --location --request POST 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "hydra:member": [
+  "@context": "string",
+  "@id": "string",
+  "@type": "string",
+  "bedroomMin": 0,
+  "budgetMax": 0,
+  "budgetMin": 0,
+  "createdAt": "2019-08-24T14:15:22Z",
+  "endpointRecipient": "https://www.mycompany.com/webhook_melo_match",
+  "eventEndpoint": "https://www.mycompany.com/webhook_melo_updates",
+  "excludedCities": [
     {
-      "@context": "/contexts/PropertyDocument",
-      "@id": "/documents/properties/a2fe8869-bbd8-4d92-ad22-5ca5511a5bc7",
-      "@type": "PropertyDocument",
-      "adverts": [
-        {
-          "condominiumFees": 1200,
-          "constructionYear": 1982,
-          "contact": {
-            "agency": "Agence Immo 2000",
-            "email": "contact@agenceimmo2000.fr",
-            "fax": "0120304050",
-            "name": "Olivie Olivier",
-            "phone": "0120304050",
-            "reference": "B42042"
-          },
-          "createdAt": "2023-05-23T23:48:47+02:00",
-          "description": "Bel appartement « coup de coeur » 2 pieces Sans perte d’espace, lumineux, poutres, parquet massif, belle hauteur sous plafonds, entièrement refait à neuf avec fenêtres double vitrage, volets roulants, porte blindée, cuisine entièrement équipée, salle d’eau avec fenêtre, idéalement situé...",
-          "elevator": true,
-          "energy": {
-            "category": "C",
-            "value": 117
-          },
-          "events": [
-            {
-              "createdAt": "2023-05-23T23:48:47+02:00",
-              "fieldName": "price",
-              "fieldNewValue": "950",
-              "fieldOldValue": "995",
-              "percentVariation": -4.52
-            }
-          ],
-          "features": [
-            "Grand balcon",
-            "Bâtiment de 5 étages",
-            "Lumineux",
-            "Coin cuisine"
-          ],
-          "feesPercentage": 10,
-          "feesResponsibility": 0,
-          "floor": 6,
-          "floorQuantity": 6,
-          "furnished": true,
-          "greenHouseGas": {
-            "category": "D",
-            "value": 32
-          },
-          "inventoryPrice": 350,
-          "landSurface": 300,
-          "lastCrawledAt": "2023-05-23T23:48:47+02:00",
-          "lotCount": 12,
-          "pictures": [
-            "https://pictures.notif.immo/properties/2021/05/10/10/a20cbdc44632c63f89aad2e6d9d049.jpg",
-            "https://pictures.notif.immo/properties/2021/05/10/10/b0935cb714d501c668b66997d7f16a.jpg",
-            "https://pictures.notif.immo/properties/2021/05/10/10/7e1ea590d4b827e9a8a762e7f378fb.jpg"
-          ],
-          "picturesRemote": [
-            "https://www.century21.fr/imagesBien/s3/202/3427/c21_202_3427_1185_1_45D57CD0-7D18-4FA0-B463-060789202625.jpg",
-            "https://www.century21.fr/imagesBien/s3/202/3427/c21_202_3427_1185_1_39192DB9-A503-4FD7-AEDB-3DEFFE35E42E.jpg",
-            "https://www.century21.fr/imagesBien/s3/202/3427/c21_202_3427_1185_1_FDDEC9E3-8A85-4BE5-83B8-12005A2D4078.jpg"
-          ],
-          "price": 950,
-          "priceExcludingFees": 1800000,
-          "publisher": {
-            "category": "Portails",
-            "name": "Century21",
-            "type": 1
-          },
-          "rentalCharges": 75,
-          "rentalPledge": 1000,
-          "renterFees": 60,
-          "surface": 30,
-          "title": "Appartement 2 pieces",
-          "updatedAt": "2023-05-23T23:48:47+02:00",
-          "url": "https://www.century21.fr/trouver_logement/detail/2424196788/",
-          "uuid": "21f2a17b-dae3-4ea4-976f-e521cebfe609",
-          "virtualTour": "https://my.matterport.com/show/?m=9GnMTmZgY44"
-        }
-      ],
-      "bedroom": 2,
-      "city": {
-        "cityParentId": 0,
-        "country": {
-          "code": "250",
-          "id": 2,
-          "name": "France"
-        },
-        "department": {
-          "code": "75",
-          "id": 77,
-          "name": "Paris"
-        },
-        "groupedCityNames": [
-          "string"
-        ],
-        "groupedCityZipcodes": [
-          "string"
-        ],
-        "hasGroupedByName": false,
-        "hasGroupedByZipcode": false,
-        "id": 30950,
-        "insee": "75116",
-        "locations": {
-          "lat": 48.8530933,
-          "lon": 2.2487626
-        },
-        "name": "Paris 18e",
-        "open": true,
-        "originalName": "Paris 18e",
-        "region": {
-          "code": "11",
-          "id": 7,
-          "name": "Île-de-France"
-        },
-        "zipcode": "75018"
-      },
-      "createdAt": "2023-05-23T23:48:47+02:00",
-      "description": "Bel appartement « coup de coeur » 2 pieces Sans perte d’espace, lumineux, poutres, parquet massif, belle hauteur sous plafonds, entièrement refait à neuf avec fenêtres double vitrage, volets roulants, porte blindée, cuisine entièrement équipée, salle d’eau avec fenêtre, idéalement situé...",
-      "elevator": true,
-      "expired": true,
-      "expiredAt": "2023-05-23T23:48:47+02:00",
-      "floor": 6,
-      "furnished": true,
-      "landSurface": 300,
-      "lastCrawledAdvert": "21f2a17b-dae3-4ea4-976f-e521cebfe609",
-      "lastCrawledAt": "2023-05-23T23:48:47+02:00",
-      "locations": {
-        "lat": 48.8530933,
-        "lon": 2.2487626
-      },
-      "pictures": [
-        "https://pictures.notif.immo/properties/2021/05/10/10/a20cbdc44632c63f89aad2e6d9d049.jpg",
-        "https://pictures.notif.immo/properties/2021/05/10/10/b0935cb714d501c668b66997d7f16a.jpg",
-        "https://pictures.notif.immo/properties/2021/05/10/10/7e1ea590d4b827e9a8a762e7f378fb.jpg"
-      ],
-      "price": 950,
-      "pricePerMeter": 31.66,
-      "property": "/properties/a2fe8869-bbd8-4d92-ad22-5ca5511a5bc7",
-      "propertyType": 0,
-      "publisherTypes": [
-        1
-      ],
-      "room": 3,
-      "stations": [
-        {
-          "id": 33,
-          "lines": [
-            {
-              "color": "#128B5B",
-              "id": 20,
-              "name": "Ligne 12",
-              "number": "12",
-              "routeName": "Front Populaire ↔ Mairie d’Issy"
-            }
-          ],
-          "name": "Jules Joffrin"
-        },
-        {
-          "id": 191,
-          "lines": [
-            {
-              "color": "#B94D9A",
-              "id": 11,
-              "name": "Ligne 4",
-              "number": "4",
-              "routeName": "Porte de Clignancourt ↔ Mairie de Montrouge"
-            },
-            {
-              "color": "#128B5B",
-              "id": 20,
-              "name": "Ligne 12",
-              "number": "12",
-              "routeName": "Front Populaire ↔ Mairie d’Issy"
-            }
-          ],
-          "name": "Marcadet-Poissonniers"
-        }
-      ],
-      "surface": 30,
-      "title": "Appartement 2 pieces",
-      "transactionType": 1,
-      "updatedAt": "2023-05-23T23:48:47+02:00",
-      "uuid": "38cb65b9-2965-4bd0-bc9b-2b8a8be7c457"
+      "@context": "string",
+      "@id": "string",
+      "@type": "string",
+      "article": "string",
+      "insee": "string",
+      "libelle": "string",
+      "name": "string",
+      "zipcode": "string"
     }
   ],
-  "hydra:totalItems": 0,
-  "hydra:view": {
-    "@id": "string",
-    "@type": "string",
-    "hydra:first": "string",
-    "hydra:last": "string",
-    "hydra:next": "string"
-  },
-  "hydra:search": {
-    "@type": "string",
-    "hydra:template": "string",
-    "hydra:variableRepresentation": "string",
-    "hydra:mapping": [
-      {
-        "@type": "string",
-        "variable": "string",
-        "property": "string",
-        "required": true
-      }
-    ]
-  }
+  "excludedSiteCategories": [
+    {
+      "@context": "string",
+      "@id": "string",
+      "@type": "string",
+      "name": "string"
+    }
+  ],
+  "expressions": "expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=true&expressions[1][0][word]=viager&expressions[1][0][options][includes]=true&expressions[1][0][options][strict]=true",
+  "furnished": true,
+  "hidePropertyContact": true,
+  "includedCities": [
+    {
+      "@context": "string",
+      "@id": "string",
+      "@type": "string",
+      "article": "string",
+      "insee": "string",
+      "libelle": "string",
+      "name": "string",
+      "zipcode": "string"
+    }
+  ],
+  "includedDepartments": [
+    {
+      "@context": "string",
+      "@id": "string",
+      "@type": "string",
+      "chefLieu": "string",
+      "departmentCode": "string",
+      "name": "string",
+      "nameClean": "string"
+    }
+  ],
+  "includedSiteCategories": [
+    {
+      "@context": "string",
+      "@id": "string",
+      "@type": "string",
+      "name": "string"
+    }
+  ],
+  "landSurfaceMax": 0,
+  "landSurfaceMin": 0,
+  "lastAlertAt": "2019-08-24T14:15:22Z",
+  "lat": "48.864716",
+  "lon": "2.349014",
+  "notificationEnabled": false,
+  "notificationRecipient": "foo@bar.com",
+  "pricePerMeterMax": 0,
+  "pricePerMeterMin": 0,
+  "propertyTypes": 3,
+  "publisherTypes": 3,
+  "radius": "20",
+  "roomMin": 0,
+  "subscribedEvents": [
+    "ad.update.price"
+  ],
+  "surfaceMax": 0,
+  "surfaceMin": 0,
+  "title": "string",
+  "token": "string",
+  "transactionType": "0",
+  "updatedAt": "2019-08-24T14:15:22Z",
+  "user": "string",
+  "withCoherentPrice": true,
+  "withVirtualTour": true
 }
 ```
 

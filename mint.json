@@ -10,16 +10,13 @@
     "primary": "#697ffc",
     "light": "#697ffc",
     "dark": "#697ffc"
-  },
-  "topbarLinks": [
-    {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+  }, 
+  "api": {
+    "baseUrl": "https://api.notif.immo",
+    "auth": {
+      "method": "key",
+      "name": "X-API-KEY"
     }
-  ],
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
   },
   "anchors": [
     {
@@ -30,13 +27,13 @@
     {
       "name": "Changelog",
       "icon": "list",
-      "url": "https://mintlify.com"
+      "url": "https://verdant-strand-46f.notion.site/8b657e7b964840abac80acd5afbb683e"
     }    
   ],
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction", "features"]
+      "pages": ["introduction", "faq"]
     },
     {
       "group": "Authentication",

@@ -1,6 +1,6 @@
 ---
 title: "Delete Search"
-api: "DELETE https://api.mintlify.com/api/user"
+api: "DELETE /searches/{id}"
 description: "This endpoint deletes an existing search."
 ---
 
@@ -15,12 +15,6 @@ description: "This endpoint deletes an existing search."
   This is the current user group token you have for the user group you want to
   delete
 </ParamField>
-
-### Response
-
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
 
 <RequestExample>
 

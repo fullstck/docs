@@ -62,6 +62,26 @@ description: "This endpoint returns properties matching given criteria."
   The minimum variation of an event of type price. Expressed in percent.
 </ParamField>
 
+<ParamField body="eventPriceVariationToCreatedAt" type="date">
+  The date before which an event of type price is created (inclusive).
+</ParamField>
+
+<ParamField body="eventSurfaceVariationFromCreatedAt" type="date">
+  The date from which an event of type surface is created (inclusive).
+</ParamField>
+
+<ParamField body="eventSurfaceVariationMax" type="float">
+  The maximum variation of an event of type surface. Expressed in percent.
+</ParamField>
+
+<ParamField body="eventSurfaceVariationMin" type="float">
+  The minimum variation of an event of type surface. Expressed in percent.
+</ParamField>
+
+<ParamField body="eventSurfaceVariationToCreatedAt" type="date">
+  The date before which an event of type surface is created (inclusive).
+</ParamField>
+
 ### Response
 
 <ResponseField name="success" type="number">

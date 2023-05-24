@@ -38,7 +38,7 @@
     },
     {
       "group": "Getting started",
-      "pages": ["api-reference/authentication", "api-reference/environments", "api-reference/faq"]
+      "pages": ["api-reference/authentication", "api-reference/environments", "api-reference/errors", "api-reference/faq"]
     },    
     {
       "group": "Properties",

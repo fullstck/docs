@@ -7,35 +7,35 @@ description: "Returns properties matching given criteria."
 ### Query parameters
 
 <ParamField query="bedroomMax" type="integer">
-  The maximum number of bedrooms in the property.
+  Maximum number of bedrooms in the property.
 </ParamField>
 
 <ParamField query="bedroomMin" type="integer">
-  The minimum number of bedrooms in the property.
+  Minimum number of bedrooms in the property.
 </ParamField>
 
 <ParamField query="budgetMax" type="integer">
-  The maximum budget for the property.
+  Maximum budget for the property.
 </ParamField>
 
 <ParamField query="budgetMin" type="integer">
-  The minimum budget for the property.
+  Minimum budget for the property.
 </ParamField>
 
 <ParamField query="condominiumFeesMax" type="integer">
-  The maximum condominium fees for the property.
+  Maximum condominium fees for the property.
 </ParamField>
 
 <ParamField query="condominiumFeesMin" type="integer">
-  The minimum condominium fees for the property.
+  Minimum condominium fees for the property.
 </ParamField>
 
 <ParamField query="constructionYearMax" type="integer">
-  The maximum construction year of the property.
+  Maximum construction year of the property.
 </ParamField>
 
 <ParamField query="constructionYearMin" type="integer">
-  The minimum construction year of the property.
+  Minimum construction year of the property.
 </ParamField>
 
 <ParamField query="energyCategories[]" type="array">
@@ -43,43 +43,43 @@ description: "Returns properties matching given criteria."
 </ParamField>
 
 <ParamField query="energyValueMax" type="integer">
-  The maximum energy value of the property.
+  Maximum energy value of the property.
 </ParamField>
 
 <ParamField query="energyValueMin" type="integer">
-  The minimum energy value of the property.
+  Minimum energy value of the property.
 </ParamField>
 
 <ParamField query="eventPriceVariationFromCreatedAt" type="date">
-  The date from which an event of type price is created (inclusive).
+  Date from which an event of type price is created — inclusive.
 </ParamField>
 
 <ParamField query="eventPriceVariationMax" type="float">
-  The maximum variation of an event of type price. Expressed in percent.
+  Maximum percent variation of an event of type price.
 </ParamField>
 
 <ParamField query="eventPriceVariationMin" type="float">
-  The minimum variation of an event of type price. Expressed in percent.
+  Minimum percent variation of an event of type price.
 </ParamField>
 
 <ParamField query="eventPriceVariationToCreatedAt" type="date">
-  The date before which an event of type price is created (inclusive).
+  Date before which an event of type price is created — inclusive.
 </ParamField>
 
 <ParamField query="eventSurfaceVariationFromCreatedAt" type="date">
-  The date from which an event of type surface is created (inclusive).
+  Date from which an event of type surface is created — inclusive.
 </ParamField>
 
 <ParamField query="eventSurfaceVariationMax" type="float">
-  The maximum variation of an event of type surface. Expressed in percent.
+  Maximum percent variation of an event of type surface.
 </ParamField>
 
 <ParamField query="eventSurfaceVariationMin" type="float">
-  The minimum variation of an event of type surface. Expressed in percent.
+  Minimum percent variation of an event of type surface.
 </ParamField>
 
 <ParamField query="eventSurfaceVariationToCreatedAt" type="date">
-  The date before which an event of type surface is created (inclusive).
+  Date before which an event of type surface is created — inclusive.
 </ParamField>
 
 <ParamField query="excludedCities[]" type="array">
@@ -98,40 +98,41 @@ description: "Returns properties matching given criteria."
   Zipcodes to be excluded.
 </ParamField>
 
-<ParamField query="expired" type="boolean">
-  Filter for expired properties.
+<ParamField query="expired" type="boolean" default="null">
+  Whether to show properties that are expired. A property is considered expired when all its adverts are expired. Can be `true`, `false` or `null`. Default is `null` which returns all properties no matter if they're expired or not.
 </ParamField>
 
-<ParamField query="expression" type="array">
+<ParamField query="expressions" type="array">
   Full text matching including/excluding words & phrases in the title or the description of the property.
+  Example: `expressions[0][0][word]=travaux&expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=false&expressions[0][1][word]=lumineux&expressions[0][1][options][includes]=true&expressions[0][1][options][strict]=false` which will search for properties that contain both the keywords `lumineux` and `travaux`.
 </ParamField>
 
 <ParamField query="feesPercentageMax" type="float">
-  The maximum percentage of fees.
+  Maximum percentage of fees.
 </ParamField>
 
 <ParamField query="feesPercentageMin" type="float">
-  The minimum percentage of fees.
+  Minimum percentage of fees.
 </ParamField>
 
 <ParamField query="feesResponsibility" type="integer">
-  Responsibility for fees (0 for seller, 1 for purchaser).
+  Responsibility for fees. `0` for seller, `1` for buyer.
 </ParamField>
 
 <ParamField query="floorQuantityMax" type="integer">
-  The maximum number of floors in the property.
+  Maximum number of floors in the property.
 </ParamField>
 
 <ParamField query="floorQuantityMin" type="integer">
-  The minimum number of floors in the property.
+  Minimum number of floors in the property.
 </ParamField>
 
 <ParamField query="fromDate" type="date">
-  The date from which the property is created (inclusive).
+  Date from which the property is created — inclusive.
 </ParamField>
 
 <ParamField query="fromUpdatedAt" type="date">
-  The date from which the property is updated (inclusive).
+  Date from which the property is updated — inclusive.
 </ParamField>
 
 <ParamField query="furnished" type="boolean">
@@ -143,63 +144,63 @@ description: "Returns properties matching given criteria."
 </ParamField>
 
 <ParamField query="greenHouseGasValueMax" type="integer">
-  The maximum value of green house gas of the property.
+  Maximum value of green house gas of the property.
 </ParamField>
 
 <ParamField query="greenHouseGasValueMin" type="integer">
-  The minimum value of green house gas of the property.
+  Minimum value of green house gas of the property.
 </ParamField>
 
-<ParamField query="includedCities[]" type="array" default="[]" >
-  Located in given cities. Example: includedCities[]=/cities/30953&includedCities[]=/cities/30952
+<ParamField query="includedCities[]" type="array" >
+  Located in given cities. Example: `includedCities[]=/cities/30953&includedCities[]=/cities/30952`
 </ParamField>
 
-<ParamField query="includedDepartments[]" type="array" default="[]" >
-  Located in given departments. Example: includedDepartments[]=includedDepartments[]=/departments/77
+<ParamField query="includedDepartments[]" type="array" >
+  Located in given departments. Example: `includedDepartments[]=includedDepartments[]=/departments/77`
 </ParamField>
 
 <ParamField query="includedInseeCodes[]" type="array">
-  Located in given insee codes. Example: includedInseeCodes[]=75117&includedInseeCodes[]=75118
+  Located in given insee codes. Example: `includedInseeCodes[]=75117&includedInseeCodes[]=75118`
 </ParamField>
 
 <ParamField query="includedZipcodes[]" type="array">
-  Located in given zipcodes. Example: includedZipcodes[]=75017&includedZipcodes[]=75018
+  Located in given zipcodes. Example: `includedZipcodes[]=75017&includedZipcodes[]=75018`
 </ParamField>
 
 <ParamField query="inventoryPriceMax" type="float" >
-  Lower than or equal to inventoryPriceMax. Example: inventoryPriceMax=500
+  Lower than or equal to given inventory price. Example: `inventoryPriceMax=500`
 </ParamField>
 
 <ParamField query="inventoryPriceMin" type="float" >
-  Greater than or equal to inventoryPriceMin. Example: inventoryPriceMin=250
+  Greater than or equal to given inventory price. Example: `inventoryPriceMin=250`
 </ParamField>
 
-<ParamField query="itemsPerPage" type="integer" default="30">
-  The number of items per page. Max is 30.
+<ParamField query="itemsPerPage" type="integer" default="10">
+  The number of items per page. Max is `30`.
 </ParamField>
 
 <ParamField query="lat" type="float" >
-  Latitude. Used if radius & lat/lon are set. Example: lat=48.864716
+  Latitude. Will work if latitude exists in the property. Example: `lat=48.864716`
 </ParamField>
 
 <ParamField query="lon" type="float">
-  Longitude. Used if radius & lat/lon are given. Example: lon=2.349014
+  Longitude. Will work if latitude exists in the property. Example: `lon=2.349014`
 </ParamField>
 
 <ParamField query="lotCountMax" type="integer" >
-  Lower than or equal to lotCountMax. Example: lotCountMax=12
+  Lower than or equal to given lot count. Example: `lotCountMax=12`
 </ParamField>
 
 <ParamField query="lotCountMin" type="integer" >
-  Greater than or equal to lotCountMin. Example: lotCountMin=4
+  Greater than or equal to given lot count. Example: `lotCountMin=4`
 </ParamField>
 
 <ParamField query="order[createdAt]" type="integer"  default="desc">
-  Order properties by creation date.
+  Order properties by creation date. Can be `asc` or `desc`.
 </ParamField>
 
 <ParamField query="order[updatedAt]" type="integer">
-  Order properties by update date.
+  Order properties by update date. Can be `asc` or `desc`.
 </ParamField>
 
 <ParamField query="page" type="integer" default="1">
@@ -207,95 +208,95 @@ description: "Returns properties matching given criteria."
 </ParamField>
 
 <ParamField query="priceExcludingFeesMax" type="float" >
-  Lower than or equal to priceExcludingFeesMax. Example: priceExcludingFeesMax=427500
+  Lower than or equal to given price excluding fees. Example: `priceExcludingFeesMax=427500`
 </ParamField>
 
 <ParamField query="priceExcludingFeesMin" type="float" >
-  Greater than or equal to priceExcludingFeesMin. Example: priceExcludingFeesMin=405000
+  Greater than or equal to given price excluding fees. Example: `priceExcludingFeesMin=405000`
 </ParamField>
 
 <ParamField query="pricePerMeterMax" type="integer" >
-  Lower than or equal to pricePerMeterMax. Example: pricePerMeterMax=11500
+  Lower than or equal to given price per meter. Example: `pricePerMeterMax=11500`
 </ParamField>
 
 <ParamField query="pricePerMeterMin" type="integer" >
-  Greater than or equal to pricePerMeterMin. Example: pricePerMeterMin=9500
+  Greater than or equal to given price per meter. Example: `pricePerMeterMin=9500`
 </ParamField>
 
 <ParamField query="propertyTypes[]" type="array">
-  0: FLAT, 1: HOUSE, 2: BUILDING, 3: PARKING, 4: OFFICE, 5: LAND, 6: SHOP
+  Type of property. Apartment `0`, House `1`, Building `2`, Parking `3`, Office `4`, Land `5`, Shop `6`. Example: `propertyTypes[]=0&propertyTypes[]=1`
 </ParamField>
 
 <ParamField query="publisherTypes[]" type="array">
-  0 : INDIVIDUAL, 1 : PROFESSIONAL
+  Type of publisher. Individual `0`, Professional `1`. Example: `publisherTypes[]=0&publisherTypes[]=1`
 </ParamField>
 
 <ParamField query="radius" type="integer" >
-  Distance expressed in kilometers. Used if lat & lon are set. Example: radius=20
+  Distance expressed in kilometers. Will work if latitude & longitude exist in the property. Example: `radius=20`
 </ParamField>
 
 <ParamField query="rentalChargesMax" type="float" >
-  Lower than or equal to rentalChargesMax. Example: rentalChargesMax=100
+  Lower than or equal to given rental charges amount. Example: `rentalChargesMax=100`
 </ParamField>
 
 <ParamField query="rentalChargesMin" type="float" >
-  Greater than or equal to rentalChargesMin. Example: rentalChargesMin=50
+  Greater than or equal to given rental charges amount. Example: `rentalChargesMin=50`
 </ParamField>
 
 <ParamField query="rentalPledgeMax" type="float" >
-  Lower than or equal to rentalPledgeMax. Example: rentalPledgeMax=800
+  Lower than or equal to given rental pledge amount. Example: `rentalPledgeMax=800`
 </ParamField>
 
 <ParamField query="rentalPledgeMin" type="float" >
-  Greater than or equal to rentalPledgeMin. Example: rentalPledgeMin=500
+  Greater than or equal to given rental pledge amount. Example: `rentalPledgeMin=500`
 </ParamField>
 
 <ParamField query="renterFeesMax" type="float" >
-  Lower than or equal to renterFeesMax. Example: renterFeesMax=80
+  Lower than or equal to given renter fees. Example: `renterFeesMax=80`
 </ParamField>
 
 <ParamField query="renterFeesMin" type="float" >
-  Greater than or equal to renterFeesMin. Example: renterFeesMin=50
+  Greater than or equal to given renter fees. Example: `renterFeesMin=50`
 </ParamField>
 
 <ParamField query="roomMax" type="integer" >
-  Having maximum x rooms. Example: roomMax=6
+  Maximum rooms of the property. Example: `roomMax=6`
 </ParamField>
 
 <ParamField query="roomMin" type="integer" >
-  Having minimum x rooms. Example: roomMin=3
+  Minimum rooms of the property. Example: `roomMin=3`
 </ParamField>
 
 <ParamField query="sortMode" type="string"  default="property">
-  Property: fromDate/toDate criteria will be applied to property root object. Items will be sorted by property createdAt dates. Advert: fromDate/toDate criteria will be applied to adverts nested objects. Items will be sorted by advert createdAt dates. Example: sortMode=property
+  Whether to sort results by properties or by adverts. If `property` is chosen, `fromDate` and `toDate` parameters will be applied to the property object and results will be sorted by the `createdAt` of each `property. If `advert`is chosen: `fromDate` and `toDate` parameters will be applied to `adverts` nested objects and results will be sorted by `createdAt` of each `advert`. Example: `sortMode=property`. Please check our [glossary](/glossary) for more information about the distinction between adverts and properties.
 </ParamField>
 
 <ParamField query="surfaceMax" type="integer" >
-  Lower than or equal to surfaceMax. Example: surfaceMax=84
+  Lower than or equal to given surface. Example: `surfaceMax=84`
 </ParamField>
 
 <ParamField query="surfaceMin" type="integer" >
-  Greater than or equal to surfaceMin. Example: surfaceMin=42
+  Greater than or equal to given surface. Example: `surfaceMin=42`
 </ParamField>
 
 <ParamField query="toDate" type="date" >
-  To datetime (inclusive). Example: toDate=2021-05-07 12:42:42
+  To datetime — inclusive. Example: `toDate=2021-05-07 12:42:42`
 </ParamField>
 
 <ParamField query="toUpdatedAt" type="date" >
-  Since datetime (inclusive). Example: toUpdatedAt=2021-05-07 12:42:42
+  Since datetime — inclusive. Example: `toUpdatedAt=2021-05-07 12:42:42`
 </ParamField>
 
 <ParamField query="transactionType" type="integer" >
-  0 : SELL, 1 : RENT
+  Type of transaction. Sell `0`, Rent `1`. Example: `transactionType=0`
 </ParamField>
 
 <ParamField query="withCoherentPrice" type="boolean"  default="true">
-  Filter properties with coherent price. Example: withCoherentPrice=true
+  Filter properties with coherent price. Example: `withCoherentPrice=true`
 </ParamField>
 
 <ParamField query="withVirtualTour" type="boolean" >
-  Having a virtual tour video link. Example: withVirtualTour=true
+  Having a virtual tour video link. Example: `withVirtualTour=true`
 </ParamField>
 
 <RequestExample>

@@ -5,21 +5,25 @@ description: "This endpoint will simulate a `match` or an `event` to the given e
 ---
 
 <Tip>
-In order to use webhooks in production, you need to provide an `endpointRecipient` or/and an `eventEndpoint` on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create).
+In order to use webhooks in production, you need to provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) an `endpointRecipient` to receive new matches in real time or/and an `eventEndpoint` to receive new advert events in real time.
 
-You can choose the events you want to subscribe to using the `subscribedEvents` parameter. All events are listed below this section.
+You can choose the events you want to subscribe to using the `subscribedEvents` parameter. All types of events are listed below this section.
 
 You also need to set the `notificationEnabled` parameter to `true` in order to receive webhooks.
 </Tip>
 
-| Event              | Description                                                  |
+| Match Events              | Description                                                  |
+|--------------------|--------------------------------------------------------------|
+| `property.ad.create` | Notifies you when a new advert is created. |
+| `property.ad.update` | Notifies you when an existing advert is updated. |
+
+| Advert Events              | Description                                                  |
 |--------------------|--------------------------------------------------------------|
 | `ad.update.price`  | Notifies you when the price of an advert changes.       |
 | `ad.update.surface`| Notifies you when the surface area of an advert changes.|
 | `ad.update.pictures`| Notifies you when the pictures of an advert are updated.|
 | `ad.update.expired`| Notifies you when an advert has expired.                    |
-| `property.ad.create` | Notifies you when a new advert is created. |
-| `property.ad.update` | Notifies you when an existing advert is updated. |
+
 
 
 ### Path

@@ -358,72 +358,31 @@ curl --location --request POST 'https://api.notif.immo/searches/{id}' \
 
 ```json Response
 {
-  "@context": "string",
-  "@id": "string",
-  "@type": "string",
   "bedroomMin": 0,
   "budgetMax": 0,
   "budgetMin": 0,
-  "createdAt": "2019-08-24T14:15:22Z",
   "endpointRecipient": "https://www.mycompany.com/webhook_melo_match",
   "eventEndpoint": "https://www.mycompany.com/webhook_melo_updates",
   "excludedCities": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "article": "string",
-      "insee": "string",
-      "libelle": "string",
-      "name": "string",
-      "zipcode": "string"
-    }
+    "string"
   ],
   "excludedSiteCategories": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "name": "string"
-    }
+    "string"
   ],
   "expressions": "expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=true&expressions[1][0][word]=viager&expressions[1][0][options][includes]=true&expressions[1][0][options][strict]=true",
   "furnished": true,
   "hidePropertyContact": true,
   "includedCities": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "article": "string",
-      "insee": "string",
-      "libelle": "string",
-      "name": "string",
-      "zipcode": "string"
-    }
+    "string"
   ],
   "includedDepartments": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "chefLieu": "string",
-      "departmentCode": "string",
-      "name": "string",
-      "nameClean": "string"
-    }
+    "string"
   ],
   "includedSiteCategories": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "name": "string"
-    }
+    "string"
   ],
   "landSurfaceMax": 0,
   "landSurfaceMin": 0,
-  "lastAlertAt": "2019-08-24T14:15:22Z",
   "lat": "48.864716",
   "lon": "2.349014",
   "notificationEnabled": false,
@@ -440,10 +399,7 @@ curl --location --request POST 'https://api.notif.immo/searches/{id}' \
   "surfaceMax": 0,
   "surfaceMin": 0,
   "title": "string",
-  "token": "string",
   "transactionType": "0",
-  "updatedAt": "2019-08-24T14:15:22Z",
-  "user": "string",
   "withCoherentPrice": true,
   "withVirtualTour": true
 }

@@ -4,6 +4,14 @@ api: "GET /webhook-tester"
 description: "This endpoint will simulate a `match` or an `event` to the given endpoint."
 ---
 
+<Warning>
+Restricting your endpoints to our IP addresses is highly recommended for security reasons:
++ Staging: `178.238.226.136`
++ Production: `195.201.86.35` `136.243.17.46`
+
+Your server implementation should return a `200` HTTP status code if the data was received successfully. If a webhook fails, it will be retried up to five times. Every retry will take place 1 hour after the previous one.
+</Warning>
+
 <Tip>
 In order to use webhooks in production, you need to provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) an `endpointRecipient` to receive new matches in real time or/and an `eventEndpoint` to receive new advert events in real time.
 

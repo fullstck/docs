@@ -146,54 +146,28 @@ description: "Creates a new search"
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.notif.immo/searches' \
+curl --location 'https://api.notif.immo/searches' \
 --header 'Content-Type: application/json' \
 --header 'X-API-KEY: <api_key>' \
 --data-raw '{
-      "bedroomMin": 0,
-  "budgetMax": 0,
+  "bedroomMin": 0,
+  "budgetMax": 1500000,
   "budgetMin": 0,
-  "endpointRecipient": "https://www.mycompany.com/webhook_melo_match",
-  "eventEndpoint": "https://www.mycompany.com/webhook_melo_updates",
-  "excludedCities": [
-    "string"
-  ],
-  "excludedSiteCategories": [
-    "string"
-  ],
-  "expressions": "expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=true&expressions[1][0][word]=viager&expressions[1][0][options][includes]=true&expressions[1][0][options][strict]=true",
-  "furnished": true,
-  "hidePropertyContact": true,
-  "includedCities": [
-    "string"
-  ],
-  "includedDepartments": [
-    "string"
-  ],
-  "includedSiteCategories": [
-    "string"
-  ],
-  "landSurfaceMax": 0,
-  "landSurfaceMin": 0,
-  "lat": "48.864716",
-  "lon": "2.349014",
-  "notificationEnabled": false,
+  "endpointRecipient": "https://hook.eu1.make.com/xyz",
+  "eventEndpoint": "https://hook.eu1.make.com/xyz",
+  "lat": 48.864716,
+  "lon": 2.349014,
+  "notificationEnabled": true,
   "notificationRecipient": "foo@bar.com",
-  "pricePerMeterMax": 0,
-  "pricePerMeterMin": 0,
-  "propertyTypes": 3,
-  "publisherTypes": 3,
-  "radius": "20",
-  "roomMin": 0,
+  "propertyTypes": [0, 1],
+  "radius": 20,
   "subscribedEvents": [
-    "ad.update.price"
+    "property.ad.create"
   ],
   "surfaceMax": 0,
-  "surfaceMin": 0,
-  "title": "string",
-  "transactionType": "0",
-  "withCoherentPrice": true,
-  "withVirtualTour": true
+  "surfaceMin": 20,
+  "transactionType": 0,
+  "title": "mySearch"
 }'
 ```
 
@@ -203,94 +177,51 @@ curl --location --request POST 'https://api.notif.immo/searches' \
 
 ```json Response
 {
-  "@context": "string",
-  "@id": "string",
-  "@type": "string",
-  "bedroomMin": 0,
-  "budgetMax": 0,
-  "budgetMin": 0,
-  "createdAt": "2019-08-24T14:15:22Z",
-  "endpointRecipient": "https://www.mycompany.com/webhook_melo_match",
-  "eventEndpoint": "https://www.mycompany.com/webhook_melo_updates",
-  "excludedCities": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "article": "string",
-      "insee": "string",
-      "libelle": "string",
-      "name": "string",
-      "zipcode": "string"
-    }
-  ],
-  "excludedSiteCategories": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "name": "string"
-    }
-  ],
-  "expressions": "expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=true&expressions[1][0][word]=viager&expressions[1][0][options][includes]=true&expressions[1][0][options][strict]=true",
-  "furnished": true,
-  "hidePropertyContact": true,
-  "includedCities": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "article": "string",
-      "insee": "string",
-      "libelle": "string",
-      "name": "string",
-      "zipcode": "string"
-    }
-  ],
-  "includedDepartments": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "chefLieu": "string",
-      "departmentCode": "string",
-      "name": "string",
-      "nameClean": "string"
-    }
-  ],
-  "includedSiteCategories": [
-    {
-      "@context": "string",
-      "@id": "string",
-      "@type": "string",
-      "name": "string"
-    }
-  ],
-  "landSurfaceMax": 0,
-  "landSurfaceMin": 0,
-  "lastAlertAt": "2019-08-24T14:15:22Z",
-  "lat": "48.864716",
-  "lon": "2.349014",
-  "notificationEnabled": false,
-  "notificationRecipient": "foo@bar.com",
-  "pricePerMeterMax": 0,
-  "pricePerMeterMin": 0,
-  "propertyTypes": 3,
-  "publisherTypes": 3,
-  "radius": "20",
-  "roomMin": 0,
-  "subscribedEvents": [
-    "ad.update.price"
-  ],
-  "surfaceMax": 0,
-  "surfaceMin": 0,
-  "title": "string",
-  "token": "string",
-  "transactionType": "0",
-  "updatedAt": "2019-08-24T14:15:22Z",
-  "user": "string",
-  "withCoherentPrice": true,
-  "withVirtualTour": true
+    "@context": "/contexts/Search",
+    "@id": "/searches/xyz",
+    "@type": "Search",
+    "title": "mySearch",
+    "user": "/users/xyz",
+    "transactionType": 0,
+    "budgetMax": 1500000,
+    "budgetMin": 0,
+    "bedroomMin": 0,
+    "roomMin": null,
+    "surfaceMin": 20,
+    "surfaceMax": 0,
+    "propertyTypes": [
+        0,
+        1
+    ],
+    "publisherTypes": [],
+    "lastAlertAt": null,
+    "token": "xyz",
+    "pricePerMeterMin": null,
+    "pricePerMeterMax": null,
+    "createdAt": "2023-06-04T00:39:53+02:00",
+    "updatedAt": "2023-06-04T00:39:53+02:00",
+    "notificationEnabled": true,
+    "includedCities": [],
+    "includedDepartments": [],
+    "excludedCities": [],
+    "expressions": [],
+    "notificationRecipient": "foo@bar.com",
+    "furnished": null,
+    "hidePropertyContact": false,
+    "withVirtualTour": null,
+    "withCoherentPrice": true,
+    "landSurfaceMin": null,
+    "landSurfaceMax": null,
+    "includedSiteCategories": [],
+    "excludedSiteCategories": [],
+    "endpointRecipient": "https://hook.eu1.make.com/xyz",
+    "eventEndpoint": "https://hook.eu1.make.com/xyz",
+    "subscribedEvents": [
+        "property.ad.create"
+    ],
+    "radius": 20,
+    "lon": 2.349014,
+    "lat": 48.864716
 }
 ```
 

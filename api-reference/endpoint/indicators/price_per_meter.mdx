@@ -58,11 +58,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The date from which an event of type price is created (inclusive).
 </ParamField>
 
-<ParamField query="eventPriceVariationMax" type="float">
+<ParamField query="eventPriceVariationMax" type="number">
   The maximum variation of an event of type price. Expressed in percent.
 </ParamField>
 
-<ParamField query="eventPriceVariationMin" type="float">
+<ParamField query="eventPriceVariationMin" type="number">
   The minimum variation of an event of type price. Expressed in percent.
 </ParamField>
 
@@ -74,11 +74,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The date from which an event of type surface is created (inclusive).
 </ParamField>
 
-<ParamField query="eventSurfaceVariationMax" type="float">
+<ParamField query="eventSurfaceVariationMax" type="number">
   The maximum variation of an event of type surface. Expressed in percent.
 </ParamField>
 
-<ParamField query="eventSurfaceVariationMin" type="float">
+<ParamField query="eventSurfaceVariationMin" type="number">
   The minimum variation of an event of type surface. Expressed in percent.
 </ParamField>
 
@@ -110,11 +110,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   Full text matching including/excluding words & phrases in the title or the description of the property.
 </ParamField>
 
-<ParamField query="feesPercentageMax" type="float">
+<ParamField query="feesPercentageMax" type="number">
   The maximum percentage of fees.
 </ParamField>
 
-<ParamField query="feesPercentageMin" type="float">
+<ParamField query="feesPercentageMin" type="number">
   The minimum percentage of fees.
 </ParamField>
 
@@ -170,11 +170,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   Located in given zipcodes. Example: includedZipcodes[]=75017&includedZipcodes[]=75018
 </ParamField>
 
-<ParamField query="inventoryPriceMax" type="float" >
+<ParamField query="inventoryPriceMax" type="number" >
   Lower than or equal to inventoryPriceMax. Example: inventoryPriceMax=500
 </ParamField>
 
-<ParamField query="inventoryPriceMin" type="float" >
+<ParamField query="inventoryPriceMin" type="number" >
   Greater than or equal to inventoryPriceMin. Example: inventoryPriceMin=250
 </ParamField>
 
@@ -182,11 +182,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The number of items per page. Max is 30.
 </ParamField>
 
-<ParamField query="lat" type="float" >
+<ParamField query="lat" type="number" >
   Latitude. Used if radius & lat/lon are set. Example: lat=48.864716
 </ParamField>
 
-<ParamField query="lon" type="float">
+<ParamField query="lon" type="number">
   Longitude. Used if radius & lat/lon are given. Example: lon=2.349014
 </ParamField>
 
@@ -210,11 +210,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The collection page number.
 </ParamField>
 
-<ParamField query="priceExcludingFeesMax" type="float" >
+<ParamField query="priceExcludingFeesMax" type="number" >
   Lower than or equal to priceExcludingFeesMax. Example: priceExcludingFeesMax=427500
 </ParamField>
 
-<ParamField query="priceExcludingFeesMin" type="float" >
+<ParamField query="priceExcludingFeesMin" type="number" >
   Greater than or equal to priceExcludingFeesMin. Example: priceExcludingFeesMin=405000
 </ParamField>
 
@@ -238,27 +238,27 @@ Date histogram granularity for time series. Can be `month` or `year`.
   Distance expressed in kilometers. Used if lat & lon are set. Example: radius=20
 </ParamField>
 
-<ParamField query="rentalChargesMax" type="float" >
+<ParamField query="rentalChargesMax" type="number" >
   Lower than or equal to rentalChargesMax. Example: rentalChargesMax=100
 </ParamField>
 
-<ParamField query="rentalChargesMin" type="float" >
+<ParamField query="rentalChargesMin" type="number" >
   Greater than or equal to rentalChargesMin. Example: rentalChargesMin=50
 </ParamField>
 
-<ParamField query="rentalPledgeMax" type="float" >
+<ParamField query="rentalPledgeMax" type="number" >
   Lower than or equal to rentalPledgeMax. Example: rentalPledgeMax=800
 </ParamField>
 
-<ParamField query="rentalPledgeMin" type="float" >
+<ParamField query="rentalPledgeMin" type="number" >
   Greater than or equal to rentalPledgeMin. Example: rentalPledgeMin=500
 </ParamField>
 
-<ParamField query="renterFeesMax" type="float" >
+<ParamField query="renterFeesMax" type="number" >
   Lower than or equal to renterFeesMax. Example: renterFeesMax=80
 </ParamField>
 
-<ParamField query="renterFeesMin" type="float" >
+<ParamField query="renterFeesMin" type="number" >
   Greater than or equal to renterFeesMin. Example: renterFeesMin=50
 </ParamField>
 

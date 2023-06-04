@@ -54,11 +54,11 @@ description: "Returns properties matching given criteria."
   Date from which an event of type price is created — inclusive.
 </ParamField>
 
-<ParamField query="eventPriceVariationMax" type="float">
+<ParamField query="eventPriceVariationMax" type="number">
   Maximum percent variation of an event of type price.
 </ParamField>
 
-<ParamField query="eventPriceVariationMin" type="float">
+<ParamField query="eventPriceVariationMin" type="number">
   Minimum percent variation of an event of type price.
 </ParamField>
 
@@ -70,11 +70,11 @@ description: "Returns properties matching given criteria."
   Date from which an event of type surface is created — inclusive.
 </ParamField>
 
-<ParamField query="eventSurfaceVariationMax" type="float">
+<ParamField query="eventSurfaceVariationMax" type="number">
   Maximum percent variation of an event of type surface.
 </ParamField>
 
-<ParamField query="eventSurfaceVariationMin" type="float">
+<ParamField query="eventSurfaceVariationMin" type="number">
   Minimum percent variation of an event of type surface.
 </ParamField>
 
@@ -107,11 +107,11 @@ description: "Returns properties matching given criteria."
   Example: `expressions[0][0][word]=travaux&expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=false&expressions[0][1][word]=lumineux&expressions[0][1][options][includes]=true&expressions[0][1][options][strict]=false` which will search for properties that contain both the keywords `lumineux` and `travaux`.
 </ParamField>
 
-<ParamField query="feesPercentageMax" type="float">
+<ParamField query="feesPercentageMax" type="number">
   Maximum percentage of fees.
 </ParamField>
 
-<ParamField query="feesPercentageMin" type="float">
+<ParamField query="feesPercentageMin" type="number">
   Minimum percentage of fees.
 </ParamField>
 
@@ -167,11 +167,11 @@ description: "Returns properties matching given criteria."
   Located in given zipcodes. Example: `includedZipcodes[]=75017&includedZipcodes[]=75018`
 </ParamField>
 
-<ParamField query="inventoryPriceMax" type="float" >
+<ParamField query="inventoryPriceMax" type="number" >
   Lower than or equal to given inventory price. Example: `inventoryPriceMax=500`
 </ParamField>
 
-<ParamField query="inventoryPriceMin" type="float" >
+<ParamField query="inventoryPriceMin" type="number" >
   Greater than or equal to given inventory price. Example: `inventoryPriceMin=250`
 </ParamField>
 
@@ -179,11 +179,11 @@ description: "Returns properties matching given criteria."
   The number of items per page. Max is `30`.
 </ParamField>
 
-<ParamField query="lat" type="float" >
+<ParamField query="lat" type="number" >
   Latitude. Will work if latitude exists in the property. Example: `lat=48.864716`
 </ParamField>
 
-<ParamField query="lon" type="float">
+<ParamField query="lon" type="number">
   Longitude. Will work if latitude exists in the property. Example: `lon=2.349014`
 </ParamField>
 
@@ -207,11 +207,11 @@ description: "Returns properties matching given criteria."
   The collection page number.
 </ParamField>
 
-<ParamField query="priceExcludingFeesMax" type="float" >
+<ParamField query="priceExcludingFeesMax" type="number" >
   Lower than or equal to given price excluding fees. Example: `priceExcludingFeesMax=427500`
 </ParamField>
 
-<ParamField query="priceExcludingFeesMin" type="float" >
+<ParamField query="priceExcludingFeesMin" type="number" >
   Greater than or equal to given price excluding fees. Example: `priceExcludingFeesMin=405000`
 </ParamField>
 
@@ -235,27 +235,27 @@ description: "Returns properties matching given criteria."
   Distance expressed in kilometers. Will work if latitude & longitude exist in the property. Example: `radius=20`
 </ParamField>
 
-<ParamField query="rentalChargesMax" type="float" >
+<ParamField query="rentalChargesMax" type="number" >
   Lower than or equal to given rental charges amount. Example: `rentalChargesMax=100`
 </ParamField>
 
-<ParamField query="rentalChargesMin" type="float" >
+<ParamField query="rentalChargesMin" type="number" >
   Greater than or equal to given rental charges amount. Example: `rentalChargesMin=50`
 </ParamField>
 
-<ParamField query="rentalPledgeMax" type="float" >
+<ParamField query="rentalPledgeMax" type="number" >
   Lower than or equal to given rental pledge amount. Example: `rentalPledgeMax=800`
 </ParamField>
 
-<ParamField query="rentalPledgeMin" type="float" >
+<ParamField query="rentalPledgeMin" type="number" >
   Greater than or equal to given rental pledge amount. Example: `rentalPledgeMin=500`
 </ParamField>
 
-<ParamField query="renterFeesMax" type="float" >
+<ParamField query="renterFeesMax" type="number" >
   Lower than or equal to given renter fees. Example: `renterFeesMax=80`
 </ParamField>
 
-<ParamField query="renterFeesMin" type="float" >
+<ParamField query="renterFeesMin" type="number" >
   Greater than or equal to given renter fees. Example: `renterFeesMin=50`
 </ParamField>
 

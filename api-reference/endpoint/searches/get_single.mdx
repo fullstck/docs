@@ -1,6 +1,6 @@
 ---
 title: "Search"
-api: "GET https://api.notif.immo/documents/searches/{id}"
+api: "GET /searches/{id}"
 description: "Returns an existing search matching the given id."
 ---
 
@@ -17,7 +17,7 @@ description: "Returns an existing search matching the given id."
 <RequestExample>
 
 ```bash Example Request
-curl --location -g --request GET 'https://api.notif.immo/documents/properties/{id}' \
+curl --location -g --request GET 'https://api.notif.immo/searches/{id}' \
 --header 'Content-Type: application/json' \
 --header 'X-API-KEY: <api_key>' \
 ```

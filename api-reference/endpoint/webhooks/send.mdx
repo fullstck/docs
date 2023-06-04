@@ -18,6 +18,8 @@ In order to use webhooks in production, you need to provide on [POST /searches](
 You can choose the events you want to subscribe to using the `subscribedEvents` parameter. All types of events are listed below this section.
 
 You also need to set the `notificationEnabled` parameter to `true` in order to receive webhooks.
+
+You can leave `notificationRecipient` to `null` if you don't want to activate email notifications when a new match or event is generated.
 </Tip>
 
 | Match Events              | Description                                                  |

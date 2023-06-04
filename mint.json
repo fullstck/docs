@@ -12,7 +12,7 @@
     "dark": "#697ffc"
   }, 
   "api": {
-    "baseUrl": ["https://api.notif.immo", "https://preprod-api.notif.immo"],
+    "baseUrl": ["https://api.notif.immo"],
     "auth": {
       "method": "key",
       "name": "X-API-KEY"

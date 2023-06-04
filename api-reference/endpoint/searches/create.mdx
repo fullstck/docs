@@ -17,8 +17,6 @@ description: "Creates a new search"
 <ParamField body="budgetMax" type="integer"  >
   Maximum budget for the property.
 </ParamField>
-
-
 <ParamField body="budgetMin" type="integer">
   Minimum budget for the property.
 </ParamField>
@@ -39,7 +37,7 @@ description: "Creates a new search"
   Site categories to be excluded.
 </ParamField>
 
-<ParamField query="expressions" type="array">
+<ParamField body="expressions" type="array">
   Full text matching including/excluding words & phrases in the title or the description of the property.
   Example: `expressions[0][0][word]=travaux&expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=false&expressions[0][1][word]=lumineux&expressions[0][1][options][includes]=true&expressions[0][1][options][strict]=false` which will search for properties that contain both the keywords `lumineux` and `travaux`.
 </ParamField>

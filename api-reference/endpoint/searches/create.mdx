@@ -14,7 +14,7 @@ description: "Creates a new search"
   Minimum number of bedrooms in the property.
 </ParamField>
 
-<ParamField body="budgetMax" type="integer"  >
+<ParamField body="budgetMax" type="number" >
   Maximum budget for the property.
 </ParamField>
 <ParamField body="budgetMin" type="integer">
@@ -94,11 +94,11 @@ description: "Creates a new search"
   Minimum price per meter.
 </ParamField>
 
-<ParamField body="propertyTypes" type="integer"  required >
+<ParamField body="propertyTypes" type="array" required >
   Type of property. Apartment `0`, House `1`, Building `2`, Parking `3`, Office `4`, Land `5`, Shop `6`. Example: `propertyTypes[]=0&propertyTypes[]=1`
 </ParamField>
 
-<ParamField body="publisherTypes" type="integer"  >
+<ParamField body="publisherTypes" type="array"  >
   Type of publisher. Individual `0`, Professional `1`. Example: `publisherTypes[]=0&publisherTypes[]=1`
 </ParamField>
 

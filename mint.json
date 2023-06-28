@@ -44,7 +44,8 @@
       "group": "Properties",
       "pages": [
         "api-reference/endpoint/properties/get_collection",
-        "api-reference/endpoint/properties/get_single" 
+        "api-reference/endpoint/properties/get_single",
+        "api-reference/endpoint/properties/get_similar" 
       ]
     },
     {

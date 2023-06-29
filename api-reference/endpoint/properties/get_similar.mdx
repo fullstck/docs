@@ -1,10 +1,17 @@
 ---
 title: "Similar Properties"
 api: "GET /documents/properties/{id}/similar-properties"
-description: "Returns properties similar to given property."
+description: "Returns a collection of properties similar to given property."
 ---
 
 ### Path parameters
+
+<ParamField path="id" type="string" required>
+  UUID of the selected property
+</ParamField>
+
+### Query parameters
+
 <ParamField query="fromDate" type="date">
   Date from which the property is created — inclusive.
 </ParamField>

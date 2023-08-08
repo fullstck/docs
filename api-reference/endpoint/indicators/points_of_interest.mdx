@@ -1,24 +1,24 @@
 ---
-title: "Points of interest"
+title: "Points of Interest"
 api: "GET /indicators/points_of_interest"
 description: "This endpoint returns the points of interests matching the given criteria."
 ---
 
 ### Query parameters
 
-<ParamField query="facilities[]" type="array" placeholder="school, kindergarten, restaurant...">
+<ParamField query="facilities[]" type="array" placeholder="school, kindergarten, restaurant..." required>
 Category of points of interest. Current available categories are `kindergarten`, `school`, `restaurant`, `hospital`, `parking`.  Example: `facilities[]=kindergarten&facilities[]=school`
 </ParamField>
 
-<ParamField query="lat" type="number">
+<ParamField query="lat" type="number" required>
   Latitude.
 </ParamField>
 
-<ParamField query="lon" type="number">
+<ParamField query="lon" type="number" required>
   Longitude
 </ParamField>
 
-<ParamField query="radius" type="number">
+<ParamField query="radius" type="number" required>
   Distance expressed in kilometers.
 </ParamField>
 

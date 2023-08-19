@@ -10,15 +10,20 @@
     "primary": "#697ffc",
     "light": "#697ffc",
     "dark": "#697ffc"
-  }, 
+  },
   "api": {
-    "baseUrl": ["https://api.notif.immo", "https://preprod-api.notif.immo"],
+    "baseUrl": [
+      "https://api.notif.immo",
+      "https://preprod-api.notif.immo"
+    ],
     "auth": {
       "method": "key",
       "name": "X-API-KEY"
+    },
+    "playground": {
+      "mode": "hide"
     }
   },
-
   "anchors": [
     {
       "name": "API Reference",
@@ -29,30 +34,38 @@
       "name": "Changelog",
       "icon": "list",
       "url": "https://verdant-strand-46f.notion.site/8b657e7b964840abac80acd5afbb683e"
-    }    
+    }
   ],
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["introduction", "glossary"]
+      "pages": [
+        "introduction",
+        "glossary"
+      ]
     },
     {
       "group": "Getting started",
-      "pages": ["api-reference/authentication", "api-reference/environments", "api-reference/errors", "api-reference/faq"]
-    },    
+      "pages": [
+        "api-reference/authentication",
+        "api-reference/environments",
+        "api-reference/errors",
+        "api-reference/faq"
+      ]
+    },
     {
       "group": "Properties",
       "pages": [
         "api-reference/endpoint/properties/get_collection",
         "api-reference/endpoint/properties/get_single",
-        "api-reference/endpoint/properties/get_similar" 
+        "api-reference/endpoint/properties/get_similar"
       ]
     },
     {
       "group": "Indicators",
       "pages": [
         "api-reference/endpoint/indicators/price_per_meter",
-        "api-reference/endpoint/indicators/points_of_interest"   
+        "api-reference/endpoint/indicators/points_of_interest"
       ]
     },
     {
@@ -68,7 +81,7 @@
     {
       "group": "Webhooks",
       "pages": [
-        "api-reference/endpoint/webhooks/send"       
+        "api-reference/endpoint/webhooks/send"
       ]
     }
   ],

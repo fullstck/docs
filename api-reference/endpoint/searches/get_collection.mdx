@@ -7,19 +7,19 @@ description: "Returns a collection of your existing searches matching given crit
 ### Query parameters
 
  <ParamField query="notificationEnabled" type="boolean">
-  The maximum number of bedrooms in the property.
+  Filter searches which have notifications enabled or not.
   </ParamField>
 
   <ParamField query="order[title]" type="string" placeholder="asc, desc">
-    The minimum number of bedrooms in the property.
+    Order searches by title. Can be `asc` or `desc`.
   </ParamField>
 
   <ParamField query="page" type="integer" default="1">
-    The maximum budget for the property.
+    The collection page number.
   </ParamField>
 
   <ParamField query="title" type="string">
-    The minimum budget for the property.
+    Title of the created search.
   </ParamField>
 
 

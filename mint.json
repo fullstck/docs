@@ -1,5 +1,4 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Melo API Documentation",
   "logo": {
     "dark": "/logo/melo.png",
@@ -19,7 +18,7 @@
     "auth": {
       "method": "key",
       "name": "X-API-KEY"
-    },   
+    } 
   },
   "anchors": [
     {

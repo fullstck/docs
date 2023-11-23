@@ -19,10 +19,7 @@
     "auth": {
       "method": "key",
       "name": "X-API-KEY"
-    },
-    "playground": {
-      "mode": "hide"
-    }
+    },   
   },
   "anchors": [
     {

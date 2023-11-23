@@ -38,7 +38,7 @@ description: "Returns a collection of properties matching given criteria."
   Minimum construction year of the property.
 </ParamField>
 
-<ParamField query="energyCategories[]" type="array">
+<ParamField query="energyCategories" type="array">
   The energy efficiency categories of the property.
 </ParamField>
 
@@ -82,19 +82,19 @@ description: "Returns a collection of properties matching given criteria."
   Date before which an event of type surface is created — inclusive.
 </ParamField>
 
-<ParamField query="excludedCities[]" type="array">
+<ParamField query="excludedCities" type="array">
   Cities to be excluded.
 </ParamField>
 
-<ParamField query="excludedInseeCodes[]" type="array">
+<ParamField query="excludedInseeCodes" type="array">
   Insee codes to be excluded.
 </ParamField>
 
-<ParamField query="excludedProperties[]" type="array">
+<ParamField query="excludedProperties" type="array">
   Properties to be excluded.
 </ParamField>
 
-<ParamField query="excludedZipcodes[]" type="array">
+<ParamField query="excludedZipcodes" type="array">
   Zipcodes to be excluded.
 </ParamField>
 
@@ -139,7 +139,7 @@ description: "Returns a collection of properties matching given criteria."
   Filter for furnished properties.
 </ParamField>
 
-<ParamField query="greenHouseGasCategories[]" type="array">
+<ParamField query="greenHouseGasCategories" type="array">
   Green house gas performance letter array of the property.
 </ParamField>
 
@@ -151,19 +151,19 @@ description: "Returns a collection of properties matching given criteria."
   Minimum value of green house gas of the property.
 </ParamField>
 
-<ParamField query="includedCities[]" type="array" >
+<ParamField query="includedCities" type="array" >
   Located in given cities. Example: `includedCities[]=/cities/30953&includedCities[]=/cities/30952`
 </ParamField>
 
-<ParamField query="includedDepartments[]" type="array" >
+<ParamField query="includedDepartments" type="array" >
   Located in given departments. Example: `includedDepartments[]=includedDepartments[]=/departments/77`
 </ParamField>
 
-<ParamField query="includedInseeCodes[]" type="array">
+<ParamField query="includedInseeCodes" type="array">
   Located in given insee codes. Example: `includedInseeCodes[]=75117&includedInseeCodes[]=75118`
 </ParamField>
 
-<ParamField query="includedZipcodes[]" type="array">
+<ParamField query="includedZipcodes" type="array">
   Located in given zipcodes. Example: `includedZipcodes[]=75017&includedZipcodes[]=75018`
 </ParamField>
 
@@ -223,11 +223,11 @@ description: "Returns a collection of properties matching given criteria."
   Greater than or equal to given price per meter. Example: `pricePerMeterMin=9500`
 </ParamField>
 
-<ParamField query="propertyTypes[]" type="array">
+<ParamField query="propertyTypes" type="array">
   Type of property. Apartment `0`, House `1`, Building `2`, Parking `3`, Office `4`, Land `5`, Shop `6`. Example: `propertyTypes[]=0&propertyTypes[]=1`
 </ParamField>
 
-<ParamField query="publisherTypes[]" type="array">
+<ParamField query="publisherTypes" type="array">
   Type of publisher. Individual `0`, Professional `1`. Example: `publisherTypes[]=0&publisherTypes[]=1`
 </ParamField>
 

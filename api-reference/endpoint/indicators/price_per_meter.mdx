@@ -42,7 +42,7 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The minimum construction year of the property.
 </ParamField>
 
-<ParamField query="energyCategories[]" type="array">
+<ParamField query="energyCategories" type="array">
   The energy efficiency categories of the property.
 </ParamField>
 
@@ -86,19 +86,19 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The date before which an event of type surface is created (inclusive).
 </ParamField>
 
-<ParamField query="excludedCities[]" type="array">
+<ParamField query="excludedCities" type="array">
   Cities to be excluded.
 </ParamField>
 
-<ParamField query="excludedInseeCodes[]" type="array">
+<ParamField query="excludedInseeCodes" type="array">
   Insee codes to be excluded.
 </ParamField>
 
-<ParamField query="excludedProperties[]" type="array">
+<ParamField query="excludedProperties" type="array">
   Properties to be excluded.
 </ParamField>
 
-<ParamField query="excludedZipcodes[]" type="array">
+<ParamField query="excludedZipcodes" type="array">
   Zipcodes to be excluded.
 </ParamField>
 
@@ -106,8 +106,9 @@ Date histogram granularity for time series. Can be `month` or `year`.
   Filter for expired properties.
 </ParamField>
 
-<ParamField query="expression" type="array">
+<ParamField query="expressions" type="array">
   Full text matching including/excluding words & phrases in the title or the description of the property.
+  Example: `expressions[0][0][word]=travaux&expressions[0][0][options][includes]=true&expressions[0][0][options][strict]=false&expressions[0][1][word]=lumineux&expressions[0][1][options][includes]=true&expressions[0][1][options][strict]=false` which will search for properties that contain both the keywords `lumineux` and `travaux`.
 </ParamField>
 
 <ParamField query="feesPercentageMax" type="number">
@@ -142,7 +143,7 @@ Date histogram granularity for time series. Can be `month` or `year`.
   Filter for furnished properties.
 </ParamField>
 
-<ParamField query="greenHouseGasCategories[]" type="array">
+<ParamField query="greenHouseGasCategories" type="array">
   Green house gas performance letter array of the property.
 </ParamField>
 
@@ -154,19 +155,19 @@ Date histogram granularity for time series. Can be `month` or `year`.
   The minimum value of green house gas of the property.
 </ParamField>
 
-<ParamField query="includedCities[]" type="array" default="[]" >
+<ParamField query="includedCities" type="array" >
   Located in given cities. Example: includedCities[]=/cities/30953&includedCities[]=/cities/30952
 </ParamField>
 
-<ParamField query="includedDepartments[]" type="array" default="[]" >
+<ParamField query="includedDepartments" type="array" >
   Located in given departments. Example: includedDepartments[]=includedDepartments[]=/departments/77
 </ParamField>
 
-<ParamField query="includedInseeCodes[]" type="array">
+<ParamField query="includedInseeCodes" type="array">
   Located in given insee codes. Example: includedInseeCodes[]=75117&includedInseeCodes[]=75118
 </ParamField>
 
-<ParamField query="includedZipcodes[]" type="array">
+<ParamField query="includedZipcodes" type="array">
   Located in given zipcodes. Example: includedZipcodes[]=75017&includedZipcodes[]=75018
 </ParamField>
 
@@ -226,11 +227,11 @@ Date histogram granularity for time series. Can be `month` or `year`.
   Greater than or equal to pricePerMeterMin. Example: pricePerMeterMin=9500
 </ParamField>
 
-<ParamField query="propertyTypes[]" type="array">
+<ParamField query="propertyTypes" type="array">
   0: FLAT, 1: HOUSE, 2: BUILDING, 3: PARKING, 4: OFFICE, 5: LAND, 6: SHOP
 </ParamField>
 
-<ParamField query="publisherTypes[]" type="array">
+<ParamField query="publisherTypes" type="array">
   0 : INDIVIDUAL, 1 : PROFESSIONAL
 </ParamField>
 

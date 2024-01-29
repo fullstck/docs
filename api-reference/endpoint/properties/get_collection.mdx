@@ -276,7 +276,15 @@ description: "Returns a collection of properties matching given criteria."
 </ParamField>
 
 <ParamField query="sortMode" type="string"  default="property">
-  Whether to sort results by properties or by adverts. If `property` is chosen, `fromDate` and `toDate` parameters will be applied to the property object and results will be sorted by the `createdAt` of each `property. If `advert`is chosen: `fromDate` and `toDate` parameters will be applied to `adverts` nested objects and results will be sorted by `createdAt` of each `advert`. Example: `sortMode=property`. Please check our [glossary](/glossary) for more information about the distinction between adverts and properties.
+  Whether to sort results by properties or by adverts. 
+  
+  If `property` is chosen, `fromDate` and `toDate` parameters will be overridden so that results will be sorted by the `createdAt` of each `property`. 
+  
+  If `advert` is chosen: `fromDate` and `toDate` parameters will be overridden so that results will be sorted by `createdAt` of each `advert`.
+  
+  Example: `sortMode=property`
+  
+  Please check our [glossary](/glossary) for more information about the distinction between adverts and properties.
 </ParamField>
 
 <ParamField query="surfaceMax" type="integer" >

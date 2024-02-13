@@ -131,6 +131,10 @@ description: "Returns a collection of properties matching given criteria."
   Date from which the property is created — inclusive.
 </ParamField>
 
+<ParamField query="fromExpiredAt" type="date">
+  Date from which the advert is expired — inclusive.
+</ParamField>
+
 <ParamField query="fromUpdatedAt" type="date">
   Date from which the property is updated — inclusive.
 </ParamField>
@@ -296,11 +300,16 @@ description: "Returns a collection of properties matching given criteria."
 </ParamField>
 
 <ParamField query="toDate" type="date" >
-  To datetime — inclusive. Example: `toDate=2021-05-07 12:42:42`
+  Date until which the ***property*** is created  — inclusive. Example: `toDate=2021-05-07 12:42:42`
+</ParamField>
+
+<ParamField query="toExpiredAt" type="date">
+  Date from which the ***advert*** is expired — inclusive.
+  Example: `toExpiredAt=2021-05-07 12:42:42`
 </ParamField>
 
 <ParamField query="toUpdatedAt" type="date" >
-  Since datetime — inclusive. Example: `toUpdatedAt=2021-05-07 12:42:42`
+  Date until which the ***property*** is updated — inclusive. Example: `toUpdatedAt=2021-05-07 12:42:42`
 </ParamField>
 
 <ParamField query="transactionType" type="integer" >

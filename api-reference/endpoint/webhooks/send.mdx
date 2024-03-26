@@ -13,9 +13,9 @@ Your server implementation should return a `200` HTTP status code if the data wa
 </Warning>
 
 <Tip>
-In order to use webhooks in production, you need to provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) an `endpointRecipient` to receive new `matches` in real time or/and an `eventEndpoint` to receive new advert events in real time.
+In order to use webhooks in production, you need to provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) an `endpointRecipient` to receive new `matches` in real time or/and an `eventEndpoint` to receive new advert `events` in real time.
 
-Please read our [Glossary](https://docs.melo.io/glossary) to understand our wording, and what is considered as a `match`.
+Please read our [Glossary](https://docs.melo.io/glossary) to understand what is a `match` and what is an `event`.
 
 You can choose the events you want to subscribe to using the `subscribedEvents` parameter. All types of events are listed below this section.
 

@@ -324,7 +324,7 @@ description: "Returns a collection of properties matching given criteria."
   Having a virtual tour video link. Example: `withVirtualTour=true`
 </ParamField>
 
-<CodeGroup>
+<RequestExample>
 
 ```bash cURL
 curl --location -g --request GET 'https://api.notif.immo/documents/properties?includedDepartments[]=departments/77&fromDate=2020-01-10&propertyTypes[]=1&transactionType=0&withCoherentPrice=true&budgetMin=1800000&budgetMax=1900000' \
@@ -349,7 +349,7 @@ response = requests.request("GET", url, headers=headers, data=payload)
 print(response.text)
 ```
 
-</CodeGroup>
+</RequestExample>
 
 <ResponseExample>
 

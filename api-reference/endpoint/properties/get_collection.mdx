@@ -332,6 +332,23 @@ curl --location -g --request GET 'https://api.notif.immo/documents/properties?in
 --header 'X-API-KEY: <api_key>'
 ```
 
+```python Python
+import requests
+import json
+
+url = "https://api.notif.immo/documents/properties?includedDepartments[]=departments/77&fromDate=2020-01-10&propertyTypes[]=1&transactionType=0&withCoherentPrice=true&budgetMin=1800000&budgetMax=1900000"
+
+payload = {}
+headers = {
+  'Content-Type': 'application/json',
+  'X-API-KEY': '<api_key>'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
 </CodeGroup>
 
 <ResponseExample>

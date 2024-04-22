@@ -141,9 +141,11 @@ description: "Creates a new search"
 <ParamField body="withVirtualTour" type="boolean" >
   Whether the property includes a virtual tour.
 </ParamField>
-<RequestExample>
 
-```bash Example Request
+
+<CodeGroup>
+
+```bash cURL
 curl --location 'https://api.notif.immo/searches' \
 --header 'Content-Type: application/json' \
 --header 'X-API-KEY: <api_key>' \
@@ -169,7 +171,47 @@ curl --location 'https://api.notif.immo/searches' \
 }'
 ```
 
-</RequestExample>
+```python Python
+
+import requests
+import json
+
+url = "https://api.notif.immo/searches"
+
+payload = json.dumps({
+  "bedroomMin": 0,
+  "budgetMax": 1500000,
+  "budgetMin": 0,
+  "endpointRecipient": "https://hook.eu1.make.com/xyz",
+  "eventEndpoint": "https://hook.eu1.make.com/xyz",
+  "lat": 48.864716,
+  "lon": 2.349014,
+  "notificationEnabled": True,
+  "notificationRecipient": "foo@bar.com",
+  "propertyTypes": [
+    0,
+    1
+  ],
+  "radius": 20,
+  "subscribedEvents": [
+    "property.ad.create"
+  ],
+  "surfaceMax": 0,
+  "surfaceMin": 20,
+  "transactionType": 0,
+  "title": "mySearch"
+})
+headers = {
+  'Content-Type': 'application/json',
+  'X-API-KEY': '<api_key>'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.json())
+```
+
+</CodeGroup>
 
 <ResponseExample>
 

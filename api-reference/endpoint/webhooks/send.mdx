@@ -12,14 +12,22 @@ Restricting your endpoints to our IP addresses is highly recommended for securit
 Your server implementation should return a `200` HTTP status code if the data was received successfully. If a webhook fails, it will be retried up to five times. Every retry will take place 1 hour after the previous one.
 </Warning>
 
-<Tip>
-In order to use webhooks in production, you need to provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create) an `endpointRecipient` to receive new `matches` in real time or/and an `eventEndpoint` to receive new advert `events` in real time.
+<Note>
+In order to use webhooks in production, you need to provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create):
+* an `endpointRecipient` to receive new `matches` in real time
+* or/and an `eventEndpoint` to receive new `advert` `events` in real time.
 
-Please read our [Glossary](https://docs.melo.io/glossary) to understand what is a `match` and what is an `event`.
+Please read our [Glossary](https://docs.melo.io/glossary) to understand what is a `match`, an `advert` and an `event`.
 
 You can choose the events you want to subscribe to using the `subscribedEvents` parameter. All types of events are listed below this section.
 
 You also need to set the `notificationEnabled` parameter to `true` in order to receive webhooks.
+</Note>
+
+<Tip>
+If you only wish to receive new `properties` that meet your search criteria in real time -- those are called `matches` -- then you can just provide on [POST /searches](http://docs.melo.io/api-reference/endpoint/searches/create):
+* an `endpointRecipient`
+* and set the `notificationEnabled` parameter to `true`
 </Tip>
 
 | Events              | Description                                                  |

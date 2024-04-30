@@ -36,14 +36,13 @@
     {
       "group": "Welcome",
       "pages": [
-        "introduction",
-        "glossary"
+        "introduction"
       ]
     },
     {
       "group": "Getting started",
       "pages": [
-        "api-reference/glossary",
+        "api-reference/concepts",
         "api-reference/authentication",
         "api-reference/environments",
         "api-reference/errors",

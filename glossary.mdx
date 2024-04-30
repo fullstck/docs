@@ -3,6 +3,25 @@ title: "Glossary"
 description: "The Glossary section provides clear definitions and explanations of key terms and concepts used throughout the API documentation"
 ---
 
+```mermaid
+graph TD
+    P(Property)
+    A1("Advert 1<br/>www.agency1.com/...")
+    A2("Advert 2<br/>www.agency2.com/...")
+    A3("Advert 3<br/>www.agency3.com/...")
+    E11("Event 1.1<br/>Price decrease")
+    E12("Event 1.2<br/>New photos")
+    E31("Event 3.1<br/>Expired")   
+
+    P --> A1
+    P --> A2
+    P --> A3
+    A1 --> E11
+    A1 --> E12    
+    A3 --> E31    
+```
+
+
 | Concept      | Definition |
 | -----------------| -------- |
 | Property       | Refers to a specific real estate unit such as a house, apartment, or commercial space. Each property can have multiple adverts, which are different listings referring to the same unit.    |

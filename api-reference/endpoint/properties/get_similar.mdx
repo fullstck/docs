@@ -20,11 +20,23 @@ description: "Returns a collection of properties similar to given property."
   The number of items per page. Max is `30`.
 </ParamField>
 
-<ParamField query="order[createdAt]" type="integer"  default="desc">
+<ParamField query="order[createdAt]" type="string"  default="desc">
   Order properties by creation date. Can be `asc` or `desc`.
 </ParamField>
 
-<ParamField query="order[updatedAt]" type="integer">
+<ParamField query="order[pricePerMeter]" type="string"  default="desc">
+  Order properties by price per meter. Can be `asc` or `desc`.
+</ParamField>
+
+<ParamField query="order[price]" type="string">
+  Order properties by price. Can be `asc` or `desc`.
+</ParamField>
+
+<ParamField query="order[surface]" type="string">
+  Order properties by surface. Can be `asc` or `desc`.
+</ParamField>
+
+<ParamField query="order[updatedAt]" type="string">
   Order properties by update date. Can be `asc` or `desc`.
 </ParamField>
 

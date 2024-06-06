@@ -6,35 +6,35 @@ description: "Returns a collection of properties matching given criteria."
 
 ### Query parameters
 
-<ParamField query="bedroomMax" type="integer">
+<ParamField query="bedroomMax" type="number">
   Maximum number of bedrooms in the property.
 </ParamField>
 
-<ParamField query="bedroomMin" type="integer">
+<ParamField query="bedroomMin" type="number">
   Minimum number of bedrooms in the property.
 </ParamField>
 
-<ParamField query="budgetMax" type="integer">
+<ParamField query="budgetMax" type="number">
   Maximum budget for the property.
 </ParamField>
 
-<ParamField query="budgetMin" type="integer">
+<ParamField query="budgetMin" type="number">
   Minimum budget for the property.
 </ParamField>
 
-<ParamField query="condominiumFeesMax" type="integer">
+<ParamField query="condominiumFeesMax" type="number">
   Maximum condominium fees for the property.
 </ParamField>
 
-<ParamField query="condominiumFeesMin" type="integer">
+<ParamField query="condominiumFeesMin" type="number">
   Minimum condominium fees for the property.
 </ParamField>
 
-<ParamField query="constructionYearMax" type="integer">
+<ParamField query="constructionYearMax" type="number">
   Maximum construction year of the property.
 </ParamField>
 
-<ParamField query="constructionYearMin" type="integer">
+<ParamField query="constructionYearMin" type="number">
   Minimum construction year of the property.
 </ParamField>
 
@@ -42,11 +42,11 @@ description: "Returns a collection of properties matching given criteria."
   The energy efficiency categories of the property.
 </ParamField>
 
-<ParamField query="energyValueMax" type="integer">
+<ParamField query="energyValueMax" type="number">
   Maximum energy value of the property.
 </ParamField>
 
-<ParamField query="energyValueMin" type="integer">
+<ParamField query="energyValueMin" type="number">
   Minimum energy value of the property.
 </ParamField>
 
@@ -115,15 +115,15 @@ description: "Returns a collection of properties matching given criteria."
   Minimum percentage of fees.
 </ParamField>
 
-<ParamField query="feesResponsibility" type="integer">
+<ParamField query="feesResponsibility" type="number">
   Responsibility for fees. `0` for seller, `1` for buyer.
 </ParamField>
 
-<ParamField query="floorQuantityMax" type="integer">
+<ParamField query="floorQuantityMax" type="number">
   Maximum number of floors in the property.
 </ParamField>
 
-<ParamField query="floorQuantityMin" type="integer">
+<ParamField query="floorQuantityMin" type="number">
   Minimum number of floors in the property.
 </ParamField>
 
@@ -147,11 +147,11 @@ description: "Returns a collection of properties matching given criteria."
   Green house gas performance letter array of the property.
 </ParamField>
 
-<ParamField query="greenHouseGasValueMax" type="integer">
+<ParamField query="greenHouseGasValueMax" type="number">
   Maximum value of green house gas of the property.
 </ParamField>
 
-<ParamField query="greenHouseGasValueMin" type="integer">
+<ParamField query="greenHouseGasValueMin" type="number">
   Minimum value of green house gas of the property.
 </ParamField>
 
@@ -179,15 +179,15 @@ description: "Returns a collection of properties matching given criteria."
   Greater than or equal to given inventory price. Example: `inventoryPriceMin=250`
 </ParamField>
 
-<ParamField query="itemsPerPage" type="integer" default="10">
+<ParamField query="itemsPerPage" type="number" default="10">
   The number of items per page. Max is `30`.
 </ParamField>
 
-<ParamField body="landSurfaceMax" type="integer" >
+<ParamField body="landSurfaceMax" type="number" >
   Maximum land surface.
 </ParamField>
 
-<ParamField body="landSurfaceMin" type="integer"  >
+<ParamField body="landSurfaceMin" type="number"  >
   Minimum land surface.
 </ParamField>
 
@@ -199,19 +199,31 @@ description: "Returns a collection of properties matching given criteria."
   Longitude. Will work if latitude exists in the property. Example: `lon=2.349014`
 </ParamField>
 
-<ParamField query="lotCountMax" type="integer" >
+<ParamField query="lotCountMax" type="number" >
   Lower than or equal to given lot count. Example: `lotCountMax=12`
 </ParamField>
 
-<ParamField query="lotCountMin" type="integer" >
+<ParamField query="lotCountMin" type="number" >
   Greater than or equal to given lot count. Example: `lotCountMin=4`
 </ParamField>
 
-<ParamField query="order[createdAt]" type="integer"  default="desc">
+<ParamField query="order[createdAt]" type="string"  default="desc">
   Order properties by creation date. Can be `asc` or `desc`.
 </ParamField>
 
-<ParamField query="order[updatedAt]" type="integer">
+<ParamField query="order[pricePerMeter]" type="string"  default="desc">
+  Order properties by price per meter. Can be `asc` or `desc`.
+</ParamField>
+
+<ParamField query="order[price]" type="string">
+  Order properties by price. Can be `asc` or `desc`.
+</ParamField>
+
+<ParamField query="order[surface]" type="string">
+  Order properties by surface. Can be `asc` or `desc`.
+</ParamField>
+
+<ParamField query="order[updatedAt]" type="string">
   Order properties by update date. Can be `asc` or `desc`.
 </ParamField>
 
@@ -227,11 +239,11 @@ description: "Returns a collection of properties matching given criteria."
   Greater than or equal to given price excluding fees. Example: `priceExcludingFeesMin=405000`
 </ParamField>
 
-<ParamField query="pricePerMeterMax" type="integer" >
+<ParamField query="pricePerMeterMax" type="number" >
   Lower than or equal to given price per meter. Example: `pricePerMeterMax=11500`
 </ParamField>
 
-<ParamField query="pricePerMeterMin" type="integer" >
+<ParamField query="pricePerMeterMin" type="number" >
   Greater than or equal to given price per meter. Example: `pricePerMeterMin=9500`
 </ParamField>
 
@@ -271,11 +283,11 @@ description: "Returns a collection of properties matching given criteria."
   Greater than or equal to given renter fees. Example: `renterFeesMin=50`
 </ParamField>
 
-<ParamField query="roomMax" type="integer" >
+<ParamField query="roomMax" type="number" >
   Maximum rooms of the property. Example: `roomMax=6`
 </ParamField>
 
-<ParamField query="roomMin" type="integer" >
+<ParamField query="roomMin" type="number" >
   Minimum rooms of the property. Example: `roomMin=3`
 </ParamField>
 
@@ -291,11 +303,11 @@ description: "Returns a collection of properties matching given criteria."
   Please check our [glossary](/glossary) for more information about the distinction between adverts and properties.
 </ParamField>
 
-<ParamField query="surfaceMax" type="integer" >
+<ParamField query="surfaceMax" type="number" >
   Lower than or equal to given surface. Example: `surfaceMax=84`
 </ParamField>
 
-<ParamField query="surfaceMin" type="integer" >
+<ParamField query="surfaceMin" type="number" >
   Greater than or equal to given surface. Example: `surfaceMin=42`
 </ParamField>
 

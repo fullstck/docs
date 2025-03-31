@@ -1,0 +1,103 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Melo API Documentation",
+  "colors": {
+    "primary": "#697ffc",
+    "light": "#697ffc",
+    "dark": "#697ffc"
+  },
+  "favicon": "/favicon.png",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Welcome",
+            "pages": [
+              "introduction"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "API Reference",
+        "icon": "rectangle-terminal",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "api-reference/concepts",
+              "api-reference/authentication",
+              "api-reference/environments",
+              "api-reference/errors",
+              "api-reference/faq"
+            ]
+          },
+          {
+            "group": "Properties",
+            "pages": [
+              "api-reference/endpoint/properties/get_collection",
+              "api-reference/endpoint/properties/get_single",
+              "api-reference/endpoint/properties/get_similar"
+            ]
+          },
+          {
+            "group": "Indicators",
+            "pages": [
+              "api-reference/endpoint/indicators/cities",
+              "api-reference/endpoint/indicators/price_per_meter",
+              "api-reference/endpoint/indicators/points_of_interest",
+              "api-reference/endpoint/indicators/locations"
+            ]
+          },
+          {
+            "group": "Searches",
+            "pages": [
+              "api-reference/endpoint/searches/get_collection",
+              "api-reference/endpoint/searches/get_single",
+              "api-reference/endpoint/searches/create",
+              "api-reference/endpoint/searches/update",
+              "api-reference/endpoint/searches/delete"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/endpoint/webhooks/send"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Changelog",
+        "href": "https://verdant-strand-46f.notion.site/8b657e7b964840abac80acd5afbb683e",
+        "icon": "list"
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/melo.png",
+    "dark": "/logo/melo.png"
+  },
+  "api": {
+    "mdx": {
+      "server": [
+        "https://api.notif.immo",
+        "https://preprod-api.notif.immo"
+      ],
+      "auth": {
+        "method": "key",
+        "name": "X-API-KEY"
+      }
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://www.melo.io/",
+      "linkedin": "https://www.linkedin.com/company/melo-io"
+    }
+  }
+}

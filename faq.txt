@@ -1,0 +1,9 @@
+### Comment accéder aux webhooks ?
+
+Pour accéder aux webhooks via l'API Melo :
+
+1. **Authentification** : Obtenez votre clé API dans le tableau de bord Melo.
+2. **Création** : Ajoutez une URL de destination pour recevoir les événements. Spécifiez les types d'événements à écouter (ex. : nouvelle donnée, mise à jour).
+3. **Test** : Utilisez l'outil de test dans le tableau de bord pour envoyer un webhook de test.
+
+Consultez https://docs.melo.io/api-reference/endpoint/webhooks/send pour plus de détails.

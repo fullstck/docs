@@ -7,3 +7,18 @@ Pour accéder aux webhooks via l'API Melo :
 3. **Test** : Utilisez l'outil de test dans le tableau de bord pour envoyer un webhook de test.
 
 Consultez https://docs.melo.io/api-reference/endpoint/webhooks/send pour plus de détails.
+
+
+### Comment se désabonner ?
+
+Pour vous désabonner, veuillez suivre ces étapes simples :
+
+Connectez-vous à votre compte.
+Accédez aux paramètres de votre compte.
+Survolez votre abonnement avec votre curseur. Une icône en forme de croix devrait apparaître. Cliquez dessus pour vous désabonner.
+
+Si l'icône en forme de croix n'apparaît pas, veuillez suivre les instructions écrites en rouge affichées sur la page de votre plan d'abonnement.
+
+Pourriez-vous nous dire la raison principale qui vous fait partir ? Nous travaillons activement sur une nouvelle version de notre API et de notre moteur de recherche : vos retours sont donc précieux !
+
+Merci.

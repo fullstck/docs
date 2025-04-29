@@ -22,3 +22,9 @@ Si l'icône en forme de croix n'apparaît pas, veuillez suivre les instructions 
 Pourriez-vous nous dire la raison principale qui vous fait partir ? Nous travaillons activement sur une nouvelle version de notre API et de notre moteur de recherche : vos retours sont donc précieux !
 
 Merci.
+
+### Le pricing API est en plus de l'abonnement mensuel ?
+
+Je vous recommande vivement notre nouvelle plateforme https://stream.estate ! Elle est entièrement dédiée à l'API et propose des tarifs plus avantageux que notre solution actuelle.
+
+

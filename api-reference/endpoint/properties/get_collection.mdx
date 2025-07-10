@@ -102,7 +102,7 @@ description: "Returns a collection of properties matching given criteria."
   Zipcodes to be excluded.
 </ParamField>
 
-<ParamField query="expired" type="boolean" default="null">
+<ParamField query="expired" default="null" type="boolean">
   Whether to show properties that are expired. A property is considered expired when all its adverts are expired. Can be `true`, `false` or `null`. Default is `null` which returns all properties no matter if they're expired or not.
 </ParamField>
 
@@ -147,6 +147,15 @@ description: "Returns a collection of properties matching given criteria."
   Filter for furnished properties.
 </ParamField>
 
+<ParamField query="geoAccuracy" type="number">
+ Filters properties by geographic accuracy level. "1" (HOUSE NUMBER - precise location at house number level), "2" (NEIGHBORHOOD - broader location within a neighborhood).
+</ParamField>
+
+<ParamField query="geoShapes" type="array">
+  Filters properties within specified geographic areas. Example: `geoShapes=geoShapes[0][0][0]=6.063201&geoShapes[0][0][1]=44.549092&geoShapes[0][1][0]=6.063201&geoShapes[0][1][1]=44.543009&geoShapes[0][2][0]=6.073453&geoShapes[0][2][1]=44.543293&geoShapes[0][3][0]=6.073453&geoShapes[0][3][1]=44.549092&geoShapes[0][4][0]=6.063201&geoShapes[0][4][1]=44.549092`.
+</ParamField>
+
+
 <ParamField query="greenHouseGasCategories" type="array">
   Green house gas performance letter array of the property.
 </ParamField>
@@ -159,11 +168,11 @@ description: "Returns a collection of properties matching given criteria."
   Minimum value of green house gas of the property.
 </ParamField>
 
-<ParamField query="includedCities" type="array" >
+<ParamField query="includedCities" type="array">
   Located in given cities. Example: `includedCities[]=/cities/30953&includedCities[]=/cities/30952`. Use [locations](/api-reference/endpoint/indicators/locations) to get the desired city ids.
 </ParamField>
 
-<ParamField query="includedDepartments" type="array" >
+<ParamField query="includedDepartments" type="array">
   Located in given departments. Example: `includedDepartments[]=/departments/77`. Use [locations](/api-reference/endpoint/indicators/locations) to get the desired department ids.
 </ParamField>
 
@@ -179,27 +188,27 @@ description: "Returns a collection of properties matching given criteria."
   Located in given zipcodes. Example: `includedZipcodes[]=75017&includedZipcodes[]=75018`
 </ParamField>
 
-<ParamField query="inventoryPriceMax" type="number" >
+<ParamField query="inventoryPriceMax" type="number">
   Lower than or equal to given inventory price. Example: `inventoryPriceMax=500`
 </ParamField>
 
-<ParamField query="inventoryPriceMin" type="number" >
+<ParamField query="inventoryPriceMin" type="number">
   Greater than or equal to given inventory price. Example: `inventoryPriceMin=250`
 </ParamField>
 
-<ParamField query="itemsPerPage" type="number" default="10">
+<ParamField query="itemsPerPage" default="10" type="number">
   The number of items per page. Max is `30`.
 </ParamField>
 
-<ParamField body="landSurfaceMax" type="number" >
+<ParamField body="landSurfaceMax" type="number">
   Maximum land surface.
 </ParamField>
 
-<ParamField body="landSurfaceMin" type="number"  >
+<ParamField body="landSurfaceMin" type="number">
   Minimum land surface.
 </ParamField>
 
-<ParamField query="lat" type="number" >
+<ParamField query="lat" type="number">
   Latitude. Will work if latitude exists in the property. Example: `lat=48.864716`
 </ParamField>
 
@@ -207,19 +216,19 @@ description: "Returns a collection of properties matching given criteria."
   Longitude. Will work if latitude exists in the property. Example: `lon=2.349014`
 </ParamField>
 
-<ParamField query="lotCountMax" type="number" >
+<ParamField query="lotCountMax" type="number">
   Lower than or equal to given lot count. Example: `lotCountMax=12`
 </ParamField>
 
-<ParamField query="lotCountMin" type="number" >
+<ParamField query="lotCountMin" type="number">
   Greater than or equal to given lot count. Example: `lotCountMin=4`
 </ParamField>
 
-<ParamField query="order[createdAt]" type="string"  default="desc">
+<ParamField query="order[createdAt]" default="desc" type="string">
   Order properties by creation date. Can be `asc` or `desc`.
 </ParamField>
 
-<ParamField query="order[pricePerMeter]" type="string"  default="desc">
+<ParamField query="order[pricePerMeter]" default="desc" type="string">
   Order properties by price per meter. Can be `asc` or `desc`.
 </ParamField>
 
@@ -235,23 +244,23 @@ description: "Returns a collection of properties matching given criteria."
   Order properties by update date. Can be `asc` or `desc`.
 </ParamField>
 
-<ParamField query="page" type="integer" default="1">
+<ParamField query="page" default="1" type="integer">
   The collection page number.
 </ParamField>
 
-<ParamField query="priceExcludingFeesMax" type="number" >
+<ParamField query="priceExcludingFeesMax" type="number">
   Lower than or equal to given price excluding fees. Example: `priceExcludingFeesMax=427500`
 </ParamField>
 
-<ParamField query="priceExcludingFeesMin" type="number" >
+<ParamField query="priceExcludingFeesMin" type="number">
   Greater than or equal to given price excluding fees. Example: `priceExcludingFeesMin=405000`
 </ParamField>
 
-<ParamField query="pricePerMeterMax" type="number" >
+<ParamField query="pricePerMeterMax" type="number">
   Lower than or equal to given price per meter. Example: `pricePerMeterMax=11500`
 </ParamField>
 
-<ParamField query="pricePerMeterMin" type="number" >
+<ParamField query="pricePerMeterMin" type="number">
   Greater than or equal to given price per meter. Example: `pricePerMeterMin=9500`
 </ParamField>
 
@@ -263,88 +272,88 @@ description: "Returns a collection of properties matching given criteria."
   Type of publisher. Individual `0`, Professional `1`. Example: `publisherTypes[]=0&publisherTypes[]=1`
 </ParamField>
 
-<ParamField query="radius" type="integer" >
+<ParamField query="radius" type="integer">
   Distance expressed in kilometers. Will work if latitude & longitude parameters are also set. Example: `radius=20`
 </ParamField>
 
-<ParamField query="rentalChargesMax" type="number" >
+<ParamField query="rentalChargesMax" type="number">
   Lower than or equal to given rental charges amount. Example: `rentalChargesMax=100`
 </ParamField>
 
-<ParamField query="rentalChargesMin" type="number" >
+<ParamField query="rentalChargesMin" type="number">
   Greater than or equal to given rental charges amount. Example: `rentalChargesMin=50`
 </ParamField>
 
-<ParamField query="rentalPledgeMax" type="number" >
+<ParamField query="rentalPledgeMax" type="number">
   Lower than or equal to given rental pledge amount. Example: `rentalPledgeMax=800`
 </ParamField>
 
-<ParamField query="rentalPledgeMin" type="number" >
+<ParamField query="rentalPledgeMin" type="number">
   Greater than or equal to given rental pledge amount. Example: `rentalPledgeMin=500`
 </ParamField>
 
-<ParamField query="renterFeesMax" type="number" >
+<ParamField query="renterFeesMax" type="number">
   Lower than or equal to given renter fees. Example: `renterFeesMax=80`
 </ParamField>
 
-<ParamField query="renterFeesMin" type="number" >
+<ParamField query="renterFeesMin" type="number">
   Greater than or equal to given renter fees. Example: `renterFeesMin=50`
 </ParamField>
 
-<ParamField query="roomMax" type="number" >
+<ParamField query="roomMax" type="number">
   Maximum rooms of the property. Example: `roomMax=6`
 </ParamField>
 
-<ParamField query="roomMin" type="number" >
+<ParamField query="roomMin" type="number">
   Minimum rooms of the property. Example: `roomMin=3`
 </ParamField>
 
-<ParamField query="sortMode" type="string"  default="property">
-  Whether to sort results by properties or by adverts. 
-  
-  If `property` is chosen, `fromDate` and `toDate` parameters will be ***overridden*** so that the results will be sorted by the `createdAt` of each `property`. 
-  
-  If `advert` is chosen: `fromDate` and `toDate` parameters will be ***overridden*** so that the results will be sorted by `createdAt` of each `advert`.
-  
+<ParamField query="sortMode" default="property" type="string">
+  Whether to sort results by properties or by adverts.
+
+  If `property` is chosen, `fromDate` and `toDate` parameters will be **_overridden_** so that the results will be sorted by the `createdAt` of each `property`.
+
+  If `advert` is chosen: `fromDate` and `toDate` parameters will be **_overridden_** so that the results will be sorted by `createdAt` of each `advert`.
+
   Example: `sortMode=property`
-  
+
   Please check our [glossary](/glossary) for more information about the distinction between adverts and properties.
 </ParamField>
 
-<ParamField query="surfaceMax" type="number" >
+<ParamField query="surfaceMax" type="number">
   Lower than or equal to given surface. Example: `surfaceMax=84`
 </ParamField>
 
-<ParamField query="surfaceMin" type="number" >
+<ParamField query="surfaceMin" type="number">
   Greater than or equal to given surface. Example: `surfaceMin=42`
 </ParamField>
 
-<ParamField query="toDate" type="date" >
-  Date until which the ***property*** is created  — inclusive. Example: `toDate=2021-05-07 12:42:42`
+<ParamField query="toDate" type="date">
+  Date until which the **_property_** is created  — inclusive. Example: `toDate=2021-05-07 12:42:42`
 </ParamField>
 
 <ParamField query="toExpiredAt" type="date">
-  Date from which the ***advert*** is expired — inclusive.
+  Date from which the **_advert_** is expired — inclusive.
   Example: `toExpiredAt=2021-05-07 12:42:42`
 </ParamField>
 
-<ParamField query="toUpdatedAt" type="date" >
-  Date until which the ***property*** is updated — inclusive. Example: `toUpdatedAt=2021-05-07 12:42:42`
+<ParamField query="toUpdatedAt" type="date">
+  Date until which the **_property_** is updated — inclusive. Example: `toUpdatedAt=2021-05-07 12:42:42`
 </ParamField>
 
-<ParamField query="transactionType" type="integer" >
+<ParamField query="transactionType" type="integer">
   Type of transaction. Sell `0`, Rent `1`. Example: `transactionType=0`
 </ParamField>
 
-<ParamField query="withCoherentPrice" type="boolean"  default="true">
+<ParamField query="withCoherentPrice" default="true" type="boolean">
   Filter properties with coherent price. Example: `withCoherentPrice=true`
 </ParamField>
 
-<ParamField query="withLocation" type="boolean" >
+<ParamField query="withLocation" type="boolean">
   Having a latitude and longitude. Example: `withLocation=true`
 </ParamField>
 
-<ParamField query="withVirtualTour" type="boolean" >
+<ParamField query="withVirtualTour" type="boolean">
   Having a virtual tour video link. Example: `withVirtualTour=true`
 </ParamField>
 
@@ -355,6 +364,7 @@ curl --location -g --request GET 'https://api.notif.immo/documents/properties?in
 --header 'Content-Type: application/json' \
 --header 'X-API-KEY: <api_key>'
 ```
+
 
 ```python Python
 import requests

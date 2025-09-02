@@ -188,12 +188,7 @@ File: mint.json
       "name": "API Reference",
       "icon": "rectangle-terminal",
       "url": "api-reference"
-    },
-    {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://verdant-strand-46f.notion.site/8b657e7b964840abac80acd5afbb683e"
-    }
+    }   
   ],
   "navigation": [
     {

@@ -1,0 +1,187 @@
+---
+title: "Quickstart"
+description: "Make your first Melo API call in minutes — authenticate, search properties, and read the response."
+---
+
+The Melo API lets you query French real-estate data — properties, adverts, price indicators, and saved searches — over plain HTTP. This page takes you from zero to a working call.
+
+## Before you start
+
+You need an API key. [Sign up on melo.io](https://www.melo.io) and create a key in your dashboard settings. Keep it secret: every request must send it in the `X-API-KEY` header.
+
+| Environment | Base URL | Notes |
+| ----------- | -------- | ----- |
+| Production  | `https://api.notif.immo` | Live, real-time data |
+| Sandbox     | `https://preprod-api.notif.immo` | Static dataset — use broad queries. Requires a Sandbox key. |
+
+<Note>
+Every endpoint is relative to the base URL, and authentication is identical in both environments: the `X-API-KEY` header. The API timezone is `Europe/Paris`.
+</Note>
+
+## Search properties
+
+This call returns **houses for sale** in a department (`77` — Seine-et-Marne), created since a given date, within a budget (`propertyTypes[]=1` is House, `transactionType=0` is Sell — see the table below). Replace `<your_api_key>` with your key and run it:
+
+<CodeGroup>
+
+```bash cURL
+curl --location -g --request GET \
+  'https://api.notif.immo/documents/properties?includedDepartments[]=departments/77&fromDate=2020-01-10&propertyTypes[]=1&transactionType=0&withCoherentPrice=true&budgetMin=200000&budgetMax=400000' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-KEY: <your_api_key>'
+```
+
+```javascript Node.js (≥ 18)
+const params = new URLSearchParams({
+  "includedDepartments[]": "departments/77",
+  fromDate: "2020-01-10",
+  "propertyTypes[]": "1",
+  transactionType: "0",
+  withCoherentPrice: "true",
+  budgetMin: "200000",
+  budgetMax: "400000",
+});
+
+const res = await fetch(`https://api.notif.immo/documents/properties?${params}`, {
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-KEY": process.env.MELO_API_KEY,
+  },
+});
+
+if (!res.ok) throw new Error(`Melo API error: ${res.status}`);
+
+const data = await res.json();
+console.log(`${data["hydra:totalItems"]} properties found`);
+console.log(data["hydra:member"]);
+```
+
+```python Python
+import os
+import requests
+
+url = "https://api.notif.immo/documents/properties"
+
+params = {
+    "includedDepartments[]": "departments/77",
+    "fromDate": "2020-01-10",
+    "propertyTypes[]": "1",
+    "transactionType": "0",
+    "withCoherentPrice": "true",
+    "budgetMin": "200000",
+    "budgetMax": "400000",
+}
+
+headers = {
+    "Content-Type": "application/json",
+    "X-API-KEY": os.environ["MELO_API_KEY"],
+}
+
+response = requests.get(url, headers=headers, params=params)
+response.raise_for_status()
+
+data = response.json()
+print(f'{data["hydra:totalItems"]} properties found')
+print(data["hydra:member"])
+```
+
+</CodeGroup>
+
+<Tip>
+The `-g` (globoff) flag tells cURL not to treat the `[` and `]` in array parameters such as `propertyTypes[]` as its own glob/range syntax. (The URL is single-quoted, so your shell already leaves the brackets alone.)
+</Tip>
+
+### Reading the response
+
+Results come back as a [Hydra](https://www.hydra-cg.com/) collection:
+
+- `hydra:member` — the array of matching properties.
+- `hydra:totalItems` — the total number of matches.
+- `hydra:view` — pagination links (`hydra:next`, `hydra:last`, …).
+
+Each member groups one **Property** with its **Adverts** and **Events**. See [Concepts](/api-reference/concepts) for what those terms mean.
+
+```json
+{
+  "hydra:member": [
+    {
+      "@id": "/documents/properties/a2fe8869-bbd8-4d92-ad22-5ca5511a5bc7",
+      "title": "Maison 5 pièces",
+      "price": 380000,
+      "surface": 110,
+      "propertyType": 1,
+      "transactionType": 0,
+      "adverts": [ /* ... */ ]
+    }
+  ],
+  "hydra:totalItems": 187,
+  "hydra:view": { "hydra:next": "/documents/properties?...&page=2" }
+}
+```
+
+To page through results, follow `hydra:view.hydra:next` until it's no longer present, or increment the `page` parameter. A `200` response with `hydra:totalItems: 0` still succeeded — it just means nothing matched; widen the budget or date range.
+
+<Note>
+On a non-2xx status, see [Error codes](/api-reference/errors): `401` is a missing or wrong key, `400` a malformed parameter, and `429` means you're sending too many requests — back off and retry.
+</Note>
+
+<Tip>
+Only need the count? Send `itemsPerPage=0` to get `hydra:totalItems` without the payload. For `/documents/properties` the count is capped at 10&nbsp;000.
+</Tip>
+
+## Common parameters
+
+These are the filters you reach for first. The full list — and **all enum values** — lives in the [Properties reference](/api-reference/endpoint/properties/get_collection). Don't guess enum values; look them up there.
+
+| Parameter | Meaning | Values |
+| --------- | ------- | ------ |
+| `transactionType` | Sale or rental | Sell `0`, Rent `1` |
+| `propertyTypes[]` | Type of property | Apartment `0`, House `1`, Building `2`, Parking `3`, Office `4`, Land `5`, Shop `6` |
+| `includedDepartments[]` | Filter by department | e.g. `departments/77` — get ids from [locations](/api-reference/endpoint/indicators/locations) |
+| `fromDate` | Created on or after this date | `YYYY-MM-DD` (interpreted in `Europe/Paris`) |
+| `budgetMin` / `budgetMax` | Price range | number |
+| `page` / `itemsPerPage` | Pagination | defaults `1` / `10`, max `30` per page |
+
+## Fetch a single property
+
+Each result's `@id` is its canonical path — e.g. `/documents/properties/a2fe8869-…`. Take the id from `@id` and fetch the property directly. (Use this id, not the separate `uuid` field — they differ, and only the `@id` id resolves here.) The response is a single property object, not a Hydra collection:
+
+<CodeGroup>
+
+```bash cURL
+curl --location -g --request GET \
+  'https://api.notif.immo/documents/properties/<property_id>' \
+  --header 'X-API-KEY: <your_api_key>'
+```
+
+```javascript Node.js (≥ 18)
+const id = "<property_id>";
+
+const res = await fetch(`https://api.notif.immo/documents/properties/${id}`, {
+  headers: { "X-API-KEY": process.env.MELO_API_KEY },
+});
+
+if (!res.ok) throw new Error(`Melo API error: ${res.status}`);
+
+const property = await res.json();
+console.log(property.title, property.price);
+```
+
+</CodeGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="key" href="/api-reference/authentication">
+    Where to find your key and how to send it.
+  </Card>
+  <Card title="All property filters" icon="sliders" href="/api-reference/endpoint/properties/get_collection">
+    Every query parameter and enum value for the properties endpoint.
+  </Card>
+  <Card title="Saved searches & webhooks" icon="bell" href="/api-reference/endpoint/searches/create">
+    Persist criteria and get real-time matches pushed to your endpoint.
+  </Card>
+  <Card title="Concepts & glossary" icon="book" href="/api-reference/concepts">
+    Property vs. advert vs. event vs. match — the model behind the API.
+  </Card>
+</CardGroup>

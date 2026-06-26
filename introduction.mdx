@@ -1,7 +1,21 @@
 ---
 title: What is Melo?
-description: 'The Melo API is designed to enable builders to easily query, observe, and automate on-chain real estate data and insights'
+description: 'The Melo API is designed to enable builders to easily query, observe, and automate real estate data and insights'
 ---
+
+The Melo API gives you French real-estate data — properties, adverts, price indicators, and saved searches — over plain HTTP. Authenticate with the `X-API-KEY` header against `https://api.notif.immo` and you're querying live data.
+
+Here's a complete, working call that returns properties in a department, within a budget:
+
+```bash
+curl --location -g --request GET \
+  'https://api.notif.immo/documents/properties?includedDepartments[]=departments/77&fromDate=2020-01-10&propertyTypes[]=1&transactionType=0&withCoherentPrice=true&budgetMin=200000&budgetMax=400000' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-KEY: <your_api_key>'
+```
+
+New here? Start with the **[Quickstart](/quickstart)** — it walks through authentication, this call in cURL / Node / Python, and how to read the response.
+
 <Card
     title="API Reference"
     icon="code"
